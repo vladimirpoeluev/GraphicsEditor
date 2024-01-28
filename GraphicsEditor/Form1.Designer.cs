@@ -47,6 +47,7 @@
             this.инструментыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.назадToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.впередToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.новыйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -87,13 +88,14 @@
             this.инструментыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(331, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(481, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.новыйToolStripMenuItem,
             this.сохранитьToolStripMenuItem,
             this.сохранитьКакToolStripMenuItem,
             this.открытьToolStripMenuItem,
@@ -106,32 +108,33 @@
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
             // 
             // сохранитьКакToolStripMenuItem
             // 
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.открытьToolStripMenuItem.Text = "Открыть";
             // 
             // печататьToolStripMenuItem
             // 
             this.печататьToolStripMenuItem.Name = "печататьToolStripMenuItem";
-            this.печататьToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.печататьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.печататьToolStripMenuItem.Text = "Печатать";
+            this.печататьToolStripMenuItem.Click += new System.EventHandler(this.печататьToolStripMenuItem_Click);
             // 
             // выйтиToolStripMenuItem
             // 
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.выйтиToolStripMenuItem.Text = "Выйти";
             // 
             // видToolStripMenuItem
@@ -208,6 +211,12 @@
             this.впередToolStripMenuItem1.Text = "Вперед";
             this.впередToolStripMenuItem1.Click += new System.EventHandler(this.buttonNext_Click);
             // 
+            // новыйToolStripMenuItem
+            // 
+            this.новыйToolStripMenuItem.Name = "новыйToolStripMenuItem";
+            this.новыйToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.новыйToolStripMenuItem.Text = "Новый";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -249,6 +258,7 @@
         private System.Windows.Forms.ToolStripMenuItem впередToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem языкToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem папкаПоУмолчаниюToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem новыйToolStripMenuItem;
     }
 }
 

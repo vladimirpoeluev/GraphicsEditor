@@ -58,8 +58,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interface\ILayers.cs" />
+    <Compile Include="ImageForDrawing.cs" />
+    <Compile Include="Interface\ITool.cs" />
+    <Compile Include="Layer.cs" />
+    <Compile Include="Tools\LineDraw.cs" />
+    <Compile Include="OrdinaryCanvas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interface\IСanvas.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

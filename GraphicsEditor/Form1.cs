@@ -7,16 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Imaging;
 
 namespace GraphicsEditor
 {
     public partial class Form1 : Form
     {
         List<Bitmap> bitmaps = new List<Bitmap>();
+        ImageForDrawing ImageFor;
+
         int numberBitmap = 0;
         public Form1()
         {
             InitializeComponent();
+            ImageFor = new ImageForDrawing(new OrdinaryCanvas(), new LineDraw());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -31,46 +35,23 @@ namespace GraphicsEditor
             //}
             
         }
+
         Point? point;
         Bitmap bmp = new Bitmap(500, 400);
+        
         public void Draw()
         {
-            pictureBox1.Image = bmp;
+            pictureBox1.Image = ImageFor.CanvasD.ActiveLayer.DrawLayer;
         }
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            
-
-            Point newPoint = new Point(e.X, e.Y);
-            Bitmap f = new Bitmap(500, 400);
-            using (Graphics g = Graphics.FromImage(f))
-            {
-                g.Clear(Color.Gray);
-            }
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                
-                if(point == null)
-                {
-                    point = newPoint;
-                }
-                else
-                {
-                    
-                    g.DrawLine(Pens.Blue, (Point)point, newPoint);
-                    point = null;
-                    bitmaps.Insert(numberBitmap, new Bitmap(bmp));
-                    numberBitmap++;
-                }
-                
-            }
-            
-            pictureBox1.Image = bmp;
+            ImageFor.AddPoint(e.Location);
+            Draw();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bmp.Save("img.png", System.Drawing.Imaging.ImageFormat.Png);
+            ImageFor.CanvasD.ActiveLayer.DrawLayer.Save("img.png", System.Drawing.Imaging.ImageFormat.Png);
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
@@ -99,6 +80,11 @@ namespace GraphicsEditor
         private void впередToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void печататьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
