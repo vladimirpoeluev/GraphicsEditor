@@ -14,7 +14,12 @@ namespace GraphicsEditor.Tools
         {
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                g.DrawLine(Pens.Blue, (Point)point, p1);
+                int width = 7;
+                Pen pen = new Pen(Color.Blue, width);
+                g.DrawLine(pen, (Point)point, p1);
+                p1.X -= width / 2;
+                p1.Y -= width / 2;
+                g.FillEllipse(Brushes.Blue, new RectangleF(p1, new Size(width, width)));
             }
 
         }
