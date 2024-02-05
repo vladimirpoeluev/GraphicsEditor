@@ -5,33 +5,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GraphicsEditor
+namespace GraphicsEditor.Tools
 {
-    internal class LineDraw : ITool
+    internal class RegularBrush : ITool
     {
         Point? point;
         private void DrawLine(Bitmap bmp, Point p1)
         {
-            using(Graphics g = Graphics.FromImage(bmp))
+            using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.DrawLine(Pens.Blue, (Point)point, p1);
             }
-            
+
         }
         public void Draw(Bitmap bmp, Point p, TypeClick type)
         {
-            if (type != TypeClick.Click)
+            if(type == TypeClick.UpLeft)
+            {
+                point = null;
                 return;
-            if(point == null)
+            }
+            if (type != TypeClick.LongPress)
+                return;
+            if (point == null)
             {
                 point = p;
             }
             else
             {
                 DrawLine(bmp, p);
-                point = null;
+                point = p;
             }
-           
+
         }
     }
 }

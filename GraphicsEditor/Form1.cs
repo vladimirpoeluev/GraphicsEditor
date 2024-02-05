@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GraphicsEditor.Tools;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,7 @@ namespace GraphicsEditor
     {
         List<Bitmap> bitmaps = new List<Bitmap>();
         ImageForDrawing ImageFor;
-
+        bool longPress = false;
         int numberBitmap = 0;
         public Form1()
         {
@@ -85,6 +86,35 @@ namespace GraphicsEditor
         private void печататьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void обычнаяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ImageFor.SetTool(new LineDraw());
+        }
+
+        private void обычнаяToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ImageFor.SetTool(new RegularBrush());
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            longPress = true;
+            ImageFor.AddPoint(e.Location, TypeClick.DownLeft);
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            longPress = false;
+            ImageFor.AddPoint(e.Location, TypeClick.UpLeft);
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (longPress)
+                ImageFor.AddPoint(e.Location, TypeClick.LongPress);
+            Draw();
         }
     }
 }

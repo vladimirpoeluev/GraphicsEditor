@@ -10,7 +10,11 @@ namespace GraphicsEditor
     enum TypeClick
     {
         Click,
-        LongPress
+        LongPress,
+        DownLeft,
+        DownRight,
+        UpLeft,
+        UpRight,
     }
     internal interface ITool
     {
