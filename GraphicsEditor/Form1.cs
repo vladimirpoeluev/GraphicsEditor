@@ -45,7 +45,7 @@ namespace GraphicsEditor
         }
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            ImageFor.AddPoint(e.Location);
+            ImageFor.AddPoint(e.Location, TypeClick.Click);
             Draw();
         }
 

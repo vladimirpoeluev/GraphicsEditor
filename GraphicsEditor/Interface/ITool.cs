@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace GraphicsEditor
 {
+    enum TypeClick
+    {
+        Click,
+        LongPress
+    }
     internal interface ITool
     {
-        void Draw(Bitmap bmp, Point p1);
+        void Draw(Bitmap bmp, Point p, TypeClick type);
     }
 }

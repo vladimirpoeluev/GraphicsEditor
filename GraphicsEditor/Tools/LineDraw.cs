@@ -18,15 +18,15 @@ namespace GraphicsEditor
             }
             
         }
-        public void Draw(Bitmap bmp, Point p1)
+        public void Draw(Bitmap bmp, Point p, TypeClick type)
         {
             if(point == null)
             {
-                point = p1;
+                point = p;
             }
             else
             {
-                DrawLine(bmp, p1);
+                DrawLine(bmp, p);
                 point = null;
             }
            

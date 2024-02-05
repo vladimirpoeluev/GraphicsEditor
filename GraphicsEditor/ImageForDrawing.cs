@@ -21,9 +21,9 @@ namespace GraphicsEditor
             CanvasD = canvas;
         }
 
-        public void AddPoint(Point p)
+        public void AddPoint(Point p, TypeClick type)
         {
-            _tool.Draw(CanvasD.ActiveLayer.DrawLayer, p);
+            _tool.Draw(CanvasD.ActiveLayer.DrawLayer, p, type);
         }
 
         public void SetTool(ITool tool)
