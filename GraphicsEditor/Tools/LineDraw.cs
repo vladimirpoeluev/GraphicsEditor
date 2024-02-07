@@ -14,7 +14,7 @@ namespace GraphicsEditor
         {
             using(Graphics g = Graphics.FromImage(bmp))
             {
-                g.DrawLine(Pens.Blue, (Point)point, p1);
+                g.DrawLine(new Pen(DrawingOptions.Color, DrawingOptions.Wigth), (Point)point, p1);
             }
             
         }
