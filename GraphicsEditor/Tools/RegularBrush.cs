@@ -14,7 +14,7 @@ namespace GraphicsEditor.Tools
         {
             using (Graphics g = Graphics.FromImage(bmp))
             {
-                int width = DrawingOptions.Wigth;
+                int width = DrawingOptions.Width;
                 Pen pen = new Pen(DrawingOptions.Color, width);
                 g.DrawLine(pen, (Point)point, p1);
                 p1.X -= width / 2;

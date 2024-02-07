@@ -34,7 +34,16 @@ namespace GraphicsEditor
 
         public Bitmap GetBitmap()
         {
-            throw new NotImplementedException();
+            Bitmap bitmap = new Bitmap(400, 500);
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                foreach (var layer in layers)
+                {
+                    g.DrawImage(layer.DrawLayer, 0, 0);
+                }
+
+            }
+            return bitmap;
         }
 
         public void RemoveLayer(int layer)

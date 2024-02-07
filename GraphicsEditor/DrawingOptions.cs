@@ -10,7 +10,7 @@ namespace GraphicsEditor
     internal class DrawingOptions
     {
         public static Color Color { get; set; } = Color.Blue;
-        public static int Wigth { get; set; } = 1;
+        public static int Width { get; set; } = 1;
 
     }
 }

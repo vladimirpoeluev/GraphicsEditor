@@ -30,7 +30,7 @@ namespace GraphicsEditor.Tools
                     yMin = point2.Value.Y;
                 }
 
-                Pen p = new Pen(Color.Blue, 3);
+                Pen p = new Pen(DrawingOptions.Color, DrawingOptions.Width);
                 System.Drawing.Rectangle rectangle = new System.Drawing.Rectangle(new Point(xMin, yMin),
                     new Size(xMax - xMin, yMax - yMin));
                 g.DrawRectangle(p, rectangle);

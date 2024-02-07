@@ -42,7 +42,7 @@ namespace GraphicsEditor
         
         public void Draw()
         {
-            pictureBox1.Image = ImageFor.CanvasD.ActiveLayer.DrawLayer;
+            pictureBox1.Image = ImageFor.CanvasD.GetBitmap();
         }
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -52,7 +52,7 @@ namespace GraphicsEditor
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ImageFor.CanvasD.ActiveLayer.DrawLayer.Save("img.png", System.Drawing.Imaging.ImageFormat.Png);
+            ImageFor.CanvasD.GetBitmap().Save("img.png", System.Drawing.Imaging.ImageFormat.Png);
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
@@ -115,6 +115,11 @@ namespace GraphicsEditor
             if (longPress)
                 ImageFor.AddPoint(e.Location, TypeClick.LongPress);
             Draw();
+        }
+
+        private void квадратToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ImageFor.SetTool(new RectangleDraw());
         }
     }
 }
