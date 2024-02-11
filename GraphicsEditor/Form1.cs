@@ -19,11 +19,13 @@ namespace GraphicsEditor
         bool longPress = false;
         int numberBitmap = 0;
         string path;
+        ColorDialog colorDialog;
         public Form1()
         {
             InitializeComponent();
             ImageFor = new ImageForDrawing(new OrdinaryCanvas(), new LineDraw());
             path = "image.png";
+            colorDialog = new ColorDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -148,6 +150,20 @@ namespace GraphicsEditor
             ImageFor = new ImageForDrawing(canvas, new LineDraw());
             path = fileDialog.FileName;
             Draw();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            colorDialog.ShowDialog(this);
+            if (colorDialog.Color == null)
+                return;
+            DrawingOptions.Color = colorDialog.Color;
+            button1.BackColor = colorDialog.Color;
+        }
+
+        private void numericUpDown1_Validated(object sender, EventArgs e)
+        {
+            MessageBox.Show("АГА");
         }
     }
 }
