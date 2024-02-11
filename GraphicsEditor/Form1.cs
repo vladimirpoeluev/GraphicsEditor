@@ -18,10 +18,12 @@ namespace GraphicsEditor
         ImageForDrawing ImageFor;
         bool longPress = false;
         int numberBitmap = 0;
+        string path;
         public Form1()
         {
             InitializeComponent();
             ImageFor = new ImageForDrawing(new OrdinaryCanvas(), new LineDraw());
+            path = "image.png";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -120,6 +122,32 @@ namespace GraphicsEditor
         private void квадратToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ImageFor.SetTool(new RectangleDraw());
+        }
+
+        private void сохранитьКакToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.ShowDialog();
+            ImageFor.CanvasD.GetBitmap().Save(saveFile.FileName + ".png", System.Drawing.Imaging.ImageFormat.Png);
+            path = saveFile.FileName;
+        }
+
+        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.ShowDialog();
+            if (fileDialog.FileName == null)
+                return;
+            ILayers l = new Layer()
+            {
+                DrawLayer = new Bitmap(fileDialog.FileName)
+            };
+            ICanvas canvas = new OrdinaryCanvas();
+            canvas.AddLayer(l);
+            canvas.SetActiveLayer(1);
+            ImageFor = new ImageForDrawing(canvas, new LineDraw());
+            path = fileDialog.FileName;
+            Draw();
         }
     }
 }
