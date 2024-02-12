@@ -99,6 +99,8 @@
   <ItemGroup>
     <Content Include="background.jpg" />
     <Content Include="i.jpg" />
+    <None Include="Resources\icons8-выход-24.png" />
+    <None Include="Resources\icons8-выход-24 %281%29.png" />
     <None Include="Resources\bg2.jpg" />
     <None Include="Resources\backgroundPhoto.bmp" />
   </ItemGroup>

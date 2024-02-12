@@ -161,9 +161,17 @@ namespace GraphicsEditor
             button1.BackColor = colorDialog.Color;
         }
 
-        private void numericUpDown1_Validated(object sender, EventArgs e)
+       
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("АГА");
+            DrawingOptions.Width = (int)numericUpDown1.Value;
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            numericUpDown1.Value = trackBar1.Value;
+            DrawingOptions.Width = (int)numericUpDown1.Value;
         }
     }
 }
