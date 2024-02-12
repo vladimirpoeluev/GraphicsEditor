@@ -173,5 +173,68 @@ namespace GraphicsEditor
             numericUpDown1.Value = trackBar1.Value;
             DrawingOptions.Width = (int)numericUpDown1.Value;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        bool IsExpandedWindow = false;
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!IsExpandedWindow)
+            {
+                this.TopMost = true;
+                this.WindowState = FormWindowState.Maximized;
+                IsExpandedWindow = true;
+            }
+            else
+            {
+                this.TopMost = true;
+                this.WindowState = FormWindowState.Normal;
+                IsExpandedWindow = false;
+            }
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.TopMost = true;
+            this.WindowState = FormWindowState.Minimized;
+        }
+        bool IsDown = false;
+        private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
+        {
+            IsDown = true;
+            Location = e.Location;
+        }
+
+        private void menuStrip1_MouseUp(object sender, MouseEventArgs e)
+        {
+            IsDown = false;
+        }
+
+        private void menuStrip1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (IsDown)
+            {
+                Location = e.Location;
+            }
+        }
     }
 }
