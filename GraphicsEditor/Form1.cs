@@ -218,10 +218,11 @@ namespace GraphicsEditor
             this.WindowState = FormWindowState.Minimized;
         }
         bool IsDown = false;
+        Point start = new Point(0, 0);
         private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
         {
             IsDown = true;
-            Location = new Point(Cursor.Position.X + Location.X, Cursor.Position.Y + Location.Y);
+            start = e.Location;
         }
 
 
@@ -233,7 +234,11 @@ namespace GraphicsEditor
 
         private void menuStrip1_MouseMove(object sender, MouseEventArgs e)
         {
-            
+            if (IsDown)
+            {
+                Point point = PointToScreen(e.Location);
+                Location = new Point(point.X - start.X, point.Y - start.Y);
+            }
         }
 
         private void Form1_Move(object sender, EventArgs e)
@@ -243,10 +248,11 @@ namespace GraphicsEditor
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (IsDown)
-            {
-                Location = new Point(Cursor.Position.X + Location.X, Cursor.Position.Y + Location.Y);
-            }
+            
+        }
+
+        private void menuStrip1_MouseLeave(object sender, EventArgs e)
+        {
         }
     }
 }
