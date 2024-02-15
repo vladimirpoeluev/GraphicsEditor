@@ -221,8 +221,10 @@ namespace GraphicsEditor
         private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
         {
             IsDown = true;
-            Location = e.Location;
+            Location = new Point(Cursor.Position.X + Location.X, Cursor.Position.Y + Location.Y);
         }
+
+
 
         private void menuStrip1_MouseUp(object sender, MouseEventArgs e)
         {
@@ -231,9 +233,19 @@ namespace GraphicsEditor
 
         private void menuStrip1_MouseMove(object sender, MouseEventArgs e)
         {
+            
+        }
+
+        private void Form1_Move(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
             if (IsDown)
             {
-                Location = e.Location;
+                Location = new Point(Cursor.Position.X + Location.X, Cursor.Position.Y + Location.Y);
             }
         }
     }
