@@ -227,7 +227,8 @@ namespace GraphicsEditor
         private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
         {
             IsDown = true;
-            start = e.Location;
+            Point p = new Point(e.X + 8, e.Y + 8);
+            start = p;
             startWithRespectForm = new Point(Cursor.Position.X - Location.X - 8, Cursor.Position.Y - Location.Y - 8);
         }
 
@@ -253,21 +254,14 @@ namespace GraphicsEditor
         }
         private void menuStrip1_MouseLeave(object sender, EventArgs e)
         {
-
-
             if (IsDown)
                 Location = new Point(Cursor.Position.X - start.X, Cursor.Position.Y - start.Y);
-
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
                 if (IsDown)
-                    Location = new Point(Cursor.Position.X - start.X, Cursor.Position.Y - start.Y);
-            
+                    Location = new Point(Cursor.Position.X - start.X, Cursor.Position.Y - start.Y);       
         }
             
     }
