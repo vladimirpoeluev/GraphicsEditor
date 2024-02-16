@@ -8,8 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Markup.Localizer;
 using System.Windows.Media.Imaging;
-
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 namespace GraphicsEditor
 {
     public partial class Form1 : Form
@@ -26,6 +28,8 @@ namespace GraphicsEditor
             ImageFor = new ImageForDrawing(new OrdinaryCanvas(), new LineDraw());
             path = "image.png";
             colorDialog = new ColorDialog();
+            timer1.Start();
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -219,10 +223,12 @@ namespace GraphicsEditor
         }
         bool IsDown = false;
         Point start = new Point(0, 0);
+        Point startWithRespectForm = new Point(0, 0);
         private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
         {
             IsDown = true;
             start = e.Location;
+            startWithRespectForm = new Point(Cursor.Position.X - Location.X - 8, Cursor.Position.Y - Location.Y - 8);
         }
 
 
@@ -234,11 +240,7 @@ namespace GraphicsEditor
 
         private void menuStrip1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (IsDown)
-            {
-                Point point = PointToScreen(e.Location);
-                Location = new Point(point.X - start.X, point.Y - start.Y);
-            }
+            
         }
 
         private void Form1_Move(object sender, EventArgs e)
@@ -248,11 +250,25 @@ namespace GraphicsEditor
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            
         }
-
         private void menuStrip1_MouseLeave(object sender, EventArgs e)
         {
+
+
+            if (IsDown)
+                Location = new Point(Cursor.Position.X - start.X, Cursor.Position.Y - start.Y);
+
+
+
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+                if (IsDown)
+                    Location = new Point(Cursor.Position.X - start.X, Cursor.Position.Y - start.Y);
+            
+        }
+            
     }
 }

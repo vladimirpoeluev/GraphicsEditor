@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace GraphicsEditor.Tools
 {
@@ -19,7 +20,8 @@ namespace GraphicsEditor.Tools
                 g.DrawLine(pen, (Point)point, p1);
                 p1.X -= width / 2;
                 p1.Y -= width / 2;
-                g.FillEllipse(Brushes.Blue, new RectangleF(p1, new Size(width, width)));
+                Brush brush = new SolidBrush(DrawingOptions.Color);
+                g.FillEllipse(brush, new RectangleF(p1, new Size(width, width)));
             }
 
         }
