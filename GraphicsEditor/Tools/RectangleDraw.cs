@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GraphicsEditor.Tools
 {
-    internal class RectangleDraw : ITool
+    internal class RectangleDraw : IViewDrawingTool
     {
         private Point? point1;
         private Point? point2;
@@ -64,6 +64,37 @@ namespace GraphicsEditor.Tools
                 point2 = null;
             }
 
+        }
+
+        public Bitmap GetView(Bitmap bmp, Point p)
+        {
+            if(point1 == null)
+            {
+                return bmp;
+            }
+            using (Graphics g = Graphics.FromImage(bmp))
+            {
+                int xMax = p.X;
+                int yMax = p.Y;
+                int xMin = point1.Value.X;
+                int yMin = point1.Value.Y;
+                if (point1.Value.X >= p.X)
+                {
+                    xMax = point1.Value.X;
+                    xMin = p.X;
+                }
+                if (point1.Value.Y >= p.Y)
+                {
+                    yMax = point1.Value.Y;
+                    yMin = p.Y;
+                }
+
+                Pen pen = new Pen(DrawingOptions.Color, DrawingOptions.Width);
+                System.Drawing.Rectangle rectangle = new System.Drawing.Rectangle(new Point(xMin, yMin),
+                    new Size(xMax - xMin, yMax - yMin));
+                g.DrawRectangle(pen, rectangle);
+            }
+            return bmp;
         }
     }
 }
