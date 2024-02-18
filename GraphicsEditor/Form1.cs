@@ -266,11 +266,20 @@ namespace GraphicsEditor
         private void button2_Click_1(object sender, EventArgs e)
         {
             flowLayoutPanel1.Visible = false;
+            назадToolStripMenuItem.Checked = false;
+
         }
 
         private void назадToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            flowLayoutPanel1.Visible = true;
+
+            flowLayoutPanel1.Visible = !flowLayoutPanel1.Visible;
+            назадToolStripMenuItem.Checked = flowLayoutPanel1.Visible;
+        }
+
+        private void впередToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

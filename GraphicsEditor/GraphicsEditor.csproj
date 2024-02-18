@@ -100,6 +100,8 @@
   <ItemGroup>
     <Content Include="background.jpg" />
     <Content Include="i.jpg" />
+    <None Include="Resources\italic_em_emphasis_format_editor_tool_icon_145968.ico" />
+    <None Include="Resources\free-icon-graphic-design-2915640.png" />
     <None Include="Resources\icons8-выход-24.png" />
     <None Include="Resources\icons8-выход-24 %281%29.png" />
     <None Include="Resources\bg2.jpg" />
