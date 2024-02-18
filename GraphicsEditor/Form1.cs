@@ -221,22 +221,13 @@ namespace GraphicsEditor
             this.TopMost = true;
             this.WindowState = FormWindowState.Minimized;
         }
-        bool IsDown = false;
-        Point start = new Point(0, 0);
-        Point startWithRespectForm = new Point(0, 0);
-        private void menuStrip1_MouseDown(object sender, MouseEventArgs e)
-        {
-            IsDown = true;
-            Point p = new Point(e.X + 8, e.Y + 8);
-            start = p;
-            startWithRespectForm = new Point(Cursor.Position.X - Location.X - 8, Cursor.Position.Y - Location.Y - 8);
-        }
+        
 
 
 
         private void menuStrip1_MouseUp(object sender, MouseEventArgs e)
         {
-            IsDown = false;
+           
         }
 
         private void menuStrip1_MouseMove(object sender, MouseEventArgs e)
@@ -254,14 +245,19 @@ namespace GraphicsEditor
         }
         private void menuStrip1_MouseLeave(object sender, EventArgs e)
         {
-            if (IsDown)
-                Location = new Point(Cursor.Position.X - start.X, Cursor.Position.Y - start.Y);
+
+
+            
+
+
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-                if (IsDown)
-                    Location = new Point(Cursor.Position.X - start.X, Cursor.Position.Y - start.Y);       
+            
+               
+            
         }
             
     }
