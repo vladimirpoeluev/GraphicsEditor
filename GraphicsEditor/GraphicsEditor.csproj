@@ -62,6 +62,7 @@
     <Compile Include="Interface\ILayers.cs" />
     <Compile Include="ImageForDrawing.cs" />
     <Compile Include="Interface\ITool.cs" />
+    <Compile Include="Interface\IViewDrawingTool.cs" />
     <Compile Include="Layer.cs" />
     <Compile Include="Tools\LineDraw.cs" />
     <Compile Include="OrdinaryCanvas.cs" />

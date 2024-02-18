@@ -21,9 +21,21 @@ namespace GraphicsEditor
             CanvasD = canvas;
         }
 
+        public Bitmap GetView(Point p)
+        {
+            return new Bitmap(CanvasD.ActiveLayer.DrawLayer);
+        }
+
         public void AddPoint(Point p, TypeClick type)
         {
             _tool.Draw(CanvasD.ActiveLayer.DrawLayer, p, type);
+        }
+        public void ViewPoint(Point p)
+        {
+            if(_tool is IViewDrawingTool)
+            {
+                ((IViewDrawingTool)_tool).GetView(GetView(new Point(0, 0)), p);
+            }
         }
 
         public void SetTool(ITool tool)

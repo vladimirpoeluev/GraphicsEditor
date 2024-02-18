@@ -50,7 +50,7 @@ namespace GraphicsEditor
         
         public void Draw()
         {
-            pictureBox1.Image = ImageFor.CanvasD.GetBitmap();
+            pictureBox1.Image = ImageFor.GetView(new Point(0, 0));
         }
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
