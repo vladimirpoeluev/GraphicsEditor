@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GraphicsEditor
 {
-    internal class LineDraw : ITool
+    internal class LineDraw : IViewDrawingTool
     {
         Point? point;
         private void DrawLine(Bitmap bmp, Point p1)
@@ -32,6 +32,17 @@ namespace GraphicsEditor
                 point = null;
             }
            
+        }
+
+        public Bitmap GetView(Bitmap bitmap, Point p)
+        {
+            if (point == null)
+                return bitmap;
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                g.DrawLine(new Pen(DrawingOptions.Color, DrawingOptions.Width), (Point)point, p);
+            }
+            return bitmap;
         }
     }
 }

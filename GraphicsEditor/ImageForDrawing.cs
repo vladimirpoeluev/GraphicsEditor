@@ -12,30 +12,46 @@ namespace GraphicsEditor
     internal class ImageForDrawing
     {
         public ICanvas CanvasD { get; private set; }
+        private int _scale = 100;
+        public int Scale { get 
+            {
+                return _scale;
+            } set 
+            {
+                _scale = value;
+            } 
+        }
 
         private ITool _tool;
-        
-        public ImageForDrawing(ICanvas canvas, ITool tool) 
+        private Bitmap _bitmapView;
+        public ImageForDrawing(ICanvas canvas, IViewDrawingTool tool) 
         { 
             SetTool(tool);
+            
             CanvasD = canvas;
+            _bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
         }
 
         public Bitmap GetView(Point p)
         {
-            return new Bitmap(CanvasD.ActiveLayer.DrawLayer);
+            var result = new Bitmap(_bitmapView);
+            
+            return result;
         }
 
         public void AddPoint(Point p, TypeClick type)
         {
             _tool.Draw(CanvasD.ActiveLayer.DrawLayer, p, type);
+            _bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
         }
         public void ViewPoint(Point p)
         {
-            if(_tool is IViewDrawingTool)
+            _bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
+            if (_tool is IViewDrawingTool)
             {
-                ((IViewDrawingTool)_tool).GetView(GetView(new Point(0, 0)), p);
+                _bitmapView = ((IViewDrawingTool)_tool).GetView(_bitmapView, p);
             }
+            
         }
 
         public void SetTool(ITool tool)

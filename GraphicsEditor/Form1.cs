@@ -121,7 +121,11 @@ namespace GraphicsEditor
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             if (longPress)
+            {
                 ImageFor.AddPoint(e.Location, TypeClick.LongPress);
+                
+            }
+            ImageFor.ViewPoint(e.Location);
             Draw();
         }
 
@@ -255,8 +259,7 @@ namespace GraphicsEditor
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-               
+
             
         }
 
