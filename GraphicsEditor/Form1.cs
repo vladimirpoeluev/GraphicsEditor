@@ -259,6 +259,15 @@ namespace GraphicsEditor
                
             
         }
-            
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Visible = false;
+        }
+
+        private void назадToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Visible = true;
+        }
     }
 }
