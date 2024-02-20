@@ -32,10 +32,11 @@ C:\Users\User\OneDrive\Рабочий стол\Graphics\GraphicsEditor\GraphicsE
 C:\Users\Student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\bin\Debug\GraphicsEditor.exe.config
 C:\Users\Student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\bin\Debug\GraphicsEditor.exe
 C:\Users\Student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\bin\Debug\GraphicsEditor.pdb
-C:\Users\Student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.csprojAssemblyReference.cache
 C:\Users\Student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.Form1.resources
 C:\Users\Student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.Properties.Resources.resources
 C:\Users\Student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.csproj.GenerateResource.cache
 C:\Users\Student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.csproj.CoreCompileInputs.cache
 C:\Users\Student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.exe
 C:\Users\Student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.pdb
+C:\Users\student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.csproj.AssemblyReference.cache
+C:\Users\student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.csproj.SuggestedBindingRedirects.cache

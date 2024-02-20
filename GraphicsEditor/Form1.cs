@@ -29,7 +29,9 @@ namespace GraphicsEditor
             path = "image.png";
             colorDialog = new ColorDialog();
             timer1.Start();
-            
+            bitmap = ImageFor.GetView(new Point(0, 0));
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -47,15 +49,17 @@ namespace GraphicsEditor
 
         Point? point;
         Bitmap bmp = new Bitmap(500, 400);
-        
+        Bitmap bitmap;
         public void Draw()
         {
-            pictureBox1.Image = ImageFor.GetView(new Point(0, 0));
+            bitmap.Dispose();
+            bitmap = ImageFor.GetView(new Point(0, 0));
+            pictureBox1.Image = bitmap;
+            
         }
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
             ImageFor.AddPoint(e.Location, TypeClick.Click);
-            Draw();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,7 +73,6 @@ namespace GraphicsEditor
             {
                 bmp = bitmaps[++numberBitmap];
             }
-            Draw();
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -78,7 +81,6 @@ namespace GraphicsEditor
             {
                 bmp = bitmaps[--numberBitmap];
             }
-            Draw();
         }
 
         private void назадToolStripMenuItem_Click(object sender, EventArgs e)
@@ -125,8 +127,8 @@ namespace GraphicsEditor
                 ImageFor.AddPoint(e.Location, TypeClick.LongPress);
                 
             }
-            ImageFor.ViewPoint(e.Location);
             Draw();
+            ImageFor.ViewPoint(e.Location);
         }
 
         private void квадратToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,7 +159,6 @@ namespace GraphicsEditor
             canvas.SetActiveLayer(1);
             ImageFor = new ImageForDrawing(canvas, new LineDraw());
             path = fileDialog.FileName;
-            Draw();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -259,8 +260,7 @@ namespace GraphicsEditor
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
-            
+            Draw();
         }
 
         private void button2_Click_1(object sender, EventArgs e)

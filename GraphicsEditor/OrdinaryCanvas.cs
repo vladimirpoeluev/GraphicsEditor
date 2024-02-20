@@ -10,6 +10,7 @@ namespace GraphicsEditor
     internal class OrdinaryCanvas : ICanvas
     {
         public ILayers ActiveLayer { get; set; }
+        Bitmap bitmap;
 
         public List<ILayers> layers = new List<ILayers>()
         {
@@ -18,6 +19,8 @@ namespace GraphicsEditor
         public OrdinaryCanvas()
         {
             ActiveLayer = layers[0];
+            bitmap = new Bitmap(400, 500);
+
         }
         public ILayers[] Layers 
         {
@@ -31,10 +34,11 @@ namespace GraphicsEditor
         {
             layers.Add(layer);
         }
-
+        
         public Bitmap GetBitmap()
         {
-            Bitmap bitmap = new Bitmap(400, 500);
+            bitmap.Dispose();
+            bitmap = new Bitmap(400, 500);
             using (Graphics g = Graphics.FromImage(bitmap))
             {
                 foreach (var layer in layers)

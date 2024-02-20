@@ -34,18 +34,20 @@ namespace GraphicsEditor
 
         public Bitmap GetView(Point p)
         {
-            var result = new Bitmap(_bitmapView);
             
+            var result = new Bitmap(_bitmapView);
             return result;
         }
 
         public void AddPoint(Point p, TypeClick type)
         {
             _tool.Draw(CanvasD.ActiveLayer.DrawLayer, p, type);
+            _bitmapView.Dispose();
             _bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
         }
         public void ViewPoint(Point p)
-        {
+        { 
+            _bitmapView.Dispose();
             _bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
             if (_tool is IViewDrawingTool)
             {

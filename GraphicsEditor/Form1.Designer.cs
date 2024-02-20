@@ -63,9 +63,9 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -88,8 +88,8 @@
             this.инструментыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1048, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(786, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.MouseLeave += new System.EventHandler(this.menuStrip1_MouseLeave);
@@ -106,45 +106,45 @@
             this.печататьToolStripMenuItem,
             this.выйтиToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // новыйToolStripMenuItem
             // 
             this.новыйToolStripMenuItem.Name = "новыйToolStripMenuItem";
-            this.новыйToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.новыйToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.новыйToolStripMenuItem.Text = "Новый";
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // сохранитьКакToolStripMenuItem
             // 
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
             this.сохранитьКакToolStripMenuItem.Click += new System.EventHandler(this.сохранитьКакToolStripMenuItem_Click);
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
             // печататьToolStripMenuItem
             // 
             this.печататьToolStripMenuItem.Name = "печататьToolStripMenuItem";
-            this.печататьToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.печататьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.печататьToolStripMenuItem.Text = "Печатать";
             // 
             // выйтиToolStripMenuItem
             // 
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.выйтиToolStripMenuItem.Text = "Выйти";
             // 
             // видToolStripMenuItem
@@ -155,13 +155,13 @@
             this.впередToolStripMenuItem,
             this.строкаСостоянияToolStripMenuItem});
             this.видToolStripMenuItem.Name = "видToolStripMenuItem";
-            this.видToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
+            this.видToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.видToolStripMenuItem.Text = "Вид";
             // 
             // свойстваToolStripMenuItem
             // 
             this.свойстваToolStripMenuItem.Name = "свойстваToolStripMenuItem";
-            this.свойстваToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.свойстваToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.свойстваToolStripMenuItem.Text = "Свойства";
             // 
             // назадToolStripMenuItem
@@ -170,21 +170,21 @@
             this.назадToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.назадToolStripMenuItem.Name = "назадToolStripMenuItem";
             this.назадToolStripMenuItem.ShowShortcutKeys = false;
-            this.назадToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.назадToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.назадToolStripMenuItem.Text = "Панель инструментов";
             this.назадToolStripMenuItem.Click += new System.EventHandler(this.назадToolStripMenuItem_Click_1);
             // 
             // впередToolStripMenuItem
             // 
             this.впередToolStripMenuItem.Name = "впередToolStripMenuItem";
-            this.впередToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.впередToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.впередToolStripMenuItem.Text = "Zoom";
             this.впередToolStripMenuItem.Click += new System.EventHandler(this.впередToolStripMenuItem_Click_1);
             // 
             // строкаСостоянияToolStripMenuItem
             // 
             this.строкаСостоянияToolStripMenuItem.Name = "строкаСостоянияToolStripMenuItem";
-            this.строкаСостоянияToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.строкаСостоянияToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.строкаСостоянияToolStripMenuItem.Text = "Строка состояния";
             // 
             // настройкиToolStripMenuItem
@@ -193,19 +193,19 @@
             this.языкToolStripMenuItem,
             this.папкаПоУмолчаниюToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(98, 26);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.настройкиToolStripMenuItem.Text = "Настройки";
             // 
             // языкToolStripMenuItem
             // 
             this.языкToolStripMenuItem.Name = "языкToolStripMenuItem";
-            this.языкToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.языкToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.языкToolStripMenuItem.Text = "Язык";
             // 
             // папкаПоУмолчаниюToolStripMenuItem
             // 
             this.папкаПоУмолчаниюToolStripMenuItem.Name = "папкаПоУмолчаниюToolStripMenuItem";
-            this.папкаПоУмолчаниюToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.папкаПоУмолчаниюToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.папкаПоУмолчаниюToolStripMenuItem.Text = "Папка по умолчанию";
             // 
             // инструментыToolStripMenuItem
@@ -215,19 +215,19 @@
             this.впередToolStripMenuItem1,
             this.рисованиеToolStripMenuItem});
             this.инструментыToolStripMenuItem.Name = "инструментыToolStripMenuItem";
-            this.инструментыToolStripMenuItem.Size = new System.Drawing.Size(117, 26);
+            this.инструментыToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.инструментыToolStripMenuItem.Text = "Инструменты";
             // 
             // назадToolStripMenuItem1
             // 
             this.назадToolStripMenuItem1.Name = "назадToolStripMenuItem1";
-            this.назадToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
+            this.назадToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
             this.назадToolStripMenuItem1.Text = "Назад";
             // 
             // впередToolStripMenuItem1
             // 
             this.впередToolStripMenuItem1.Name = "впередToolStripMenuItem1";
-            this.впередToolStripMenuItem1.Size = new System.Drawing.Size(167, 26);
+            this.впередToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
             this.впередToolStripMenuItem1.Text = "Вперед";
             // 
             // рисованиеToolStripMenuItem
@@ -237,7 +237,7 @@
             this.кистиToolStripMenuItem,
             this.фигурыToolStripMenuItem});
             this.рисованиеToolStripMenuItem.Name = "рисованиеToolStripMenuItem";
-            this.рисованиеToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
+            this.рисованиеToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.рисованиеToolStripMenuItem.Text = "Рисование";
             // 
             // линииToolStripMenuItem
@@ -245,13 +245,13 @@
             this.линииToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.обычнаяToolStripMenuItem});
             this.линииToolStripMenuItem.Name = "линииToolStripMenuItem";
-            this.линииToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.линииToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.линииToolStripMenuItem.Text = "Линии";
             // 
             // обычнаяToolStripMenuItem
             // 
             this.обычнаяToolStripMenuItem.Name = "обычнаяToolStripMenuItem";
-            this.обычнаяToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.обычнаяToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.обычнаяToolStripMenuItem.Text = "Обычная";
             this.обычнаяToolStripMenuItem.Click += new System.EventHandler(this.обычнаяToolStripMenuItem_Click);
             // 
@@ -260,13 +260,13 @@
             this.кистиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.обычнаяToolStripMenuItem1});
             this.кистиToolStripMenuItem.Name = "кистиToolStripMenuItem";
-            this.кистиToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.кистиToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.кистиToolStripMenuItem.Text = "Кисти";
             // 
             // обычнаяToolStripMenuItem1
             // 
             this.обычнаяToolStripMenuItem1.Name = "обычнаяToolStripMenuItem1";
-            this.обычнаяToolStripMenuItem1.Size = new System.Drawing.Size(156, 26);
+            this.обычнаяToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.обычнаяToolStripMenuItem1.Text = "Обычная";
             this.обычнаяToolStripMenuItem1.Click += new System.EventHandler(this.обычнаяToolStripMenuItem1_Click);
             // 
@@ -275,13 +275,13 @@
             this.фигурыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.квадратToolStripMenuItem});
             this.фигурыToolStripMenuItem.Name = "фигурыToolStripMenuItem";
-            this.фигурыToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.фигурыToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.фигурыToolStripMenuItem.Text = "Фигуры";
             // 
             // квадратToolStripMenuItem
             // 
             this.квадратToolStripMenuItem.Name = "квадратToolStripMenuItem";
-            this.квадратToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.квадратToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.квадратToolStripMenuItem.Text = "Квадрат";
             this.квадратToolStripMenuItem.Click += new System.EventHandler(this.квадратToolStripMenuItem_Click);
             // 
@@ -294,11 +294,11 @@
             this.flowLayoutPanel1.Controls.Add(this.numericUpDown1);
             this.flowLayoutPanel1.Controls.Add(this.trackBar1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(852, 33);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(638, 26);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.tableLayoutPanel1.SetRowSpan(this.flowLayoutPanel1, 2);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(194, 510);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(146, 436);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // button2
@@ -310,9 +310,10 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Location = new System.Drawing.Point(2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 25);
+            this.button2.Size = new System.Drawing.Size(135, 20);
             this.button2.TabIndex = 3;
             this.button2.Text = "Скрыть панель";
             this.button2.UseVisualStyleBackColor = false;
@@ -320,10 +321,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 33);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(2, 26);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(35, 34);
+            this.button1.Size = new System.Drawing.Size(26, 28);
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -331,21 +332,21 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown1.Location = new System.Drawing.Point(44, 33);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numericUpDown1.Location = new System.Drawing.Point(32, 26);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(128, 34);
+            this.numericUpDown1.Size = new System.Drawing.Size(96, 28);
             this.numericUpDown1.TabIndex = 2;
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // trackBar1
             // 
             this.trackBar1.AutoSize = false;
-            this.trackBar1.Location = new System.Drawing.Point(3, 71);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.trackBar1.Location = new System.Drawing.Point(2, 58);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.trackBar1.Maximum = 15;
             this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(185, 30);
+            this.trackBar1.Size = new System.Drawing.Size(139, 24);
             this.trackBar1.TabIndex = 1;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
@@ -361,13 +362,12 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1048, 571);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(786, 464);
             this.tableLayoutPanel1.TabIndex = 3;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -377,10 +377,9 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 34);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(842, 508);
+            this.pictureBox1.Size = new System.Drawing.Size(630, 414);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -389,11 +388,6 @@
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -401,13 +395,13 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.trackBar2, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 546);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 444);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1048, 25);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(636, 20);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // trackBar2
@@ -415,25 +409,29 @@
             this.trackBar2.BackColor = System.Drawing.SystemColors.Control;
             this.trackBar2.Dock = System.Windows.Forms.DockStyle.Right;
             this.trackBar2.LargeChange = 1;
-            this.trackBar2.Location = new System.Drawing.Point(859, 0);
+            this.trackBar2.Location = new System.Drawing.Point(499, 0);
             this.trackBar2.Margin = new System.Windows.Forms.Padding(0);
             this.trackBar2.Maximum = 100;
             this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(183, 56);
+            this.trackBar2.Size = new System.Drawing.Size(137, 20);
             this.trackBar2.TabIndex = 0;
             this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.None;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1048, 571);
+            this.ClientSize = new System.Drawing.Size(786, 464);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Инструмент обработки изображения";
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
