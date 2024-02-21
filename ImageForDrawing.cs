@@ -31,7 +31,7 @@ namespace GraphicsEditor
             SetTool(tool);
             SizeWindow = size;
             CanvasD = canvas;
-            _bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
+            _bitmapView = new Bitmap(CanvasD.GetBitmap());
         }
 
         public Bitmap GetView(Point p)
@@ -49,22 +49,22 @@ namespace GraphicsEditor
 
         public void AddPoint(Point p, TypeClick type)
         {
-            p.X -= positionView.X;
-            p.Y -= positionView.Y;
+            p.X = (int)((p.X - positionView.X));
+            p.Y = (int)((p.Y - positionView.Y));
             _tool.Draw(CanvasD.ActiveLayer.DrawLayer, p, type);
             _bitmapView.Dispose();
-            _bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
+            _bitmapView = new Bitmap(CanvasD.GetBitmap());
             
            
         }
         public void ViewPoint(Point p)
         {
-            p.X = (int)((p.X - positionView.X) * Scale);
-            p.Y = (int)((p.Y - positionView.Y) * Scale);
+            p.X = (int)((p.X - positionView.X) - Scale);
+            p.Y = (int)((p.Y - positionView.Y) - Scale);
 
             _bitmapView.Dispose();
             Bitmap bm = CanvasD.GetBitmap();
-                _bitmapView = new Bitmap(bm, new Size((int)(bm.Width * Scale), (int)(bm.Height * Scale)));
+            _bitmapView = new Bitmap(bm, new Size((int)(bm.Width * Scale), (int)(bm.Height * Scale)));
                 if (_tool is IViewDrawingTool)
                 {
                     _bitmapView = ((IViewDrawingTool)_tool).GetView(_bitmapView, p);

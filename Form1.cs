@@ -33,8 +33,8 @@ namespace GraphicsEditor
             timer1.Start();
             bitmap = ImageFor.GetView(new Point(0, 0));
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
-            cursorPositiun = new Point(0, 0);   
-
+            cursorPositiun = new Point(0, 0);
+            positionView = new Point(pictureBox1.Size.Width / 2, pictureBox1.Height / 2);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -301,7 +301,7 @@ namespace GraphicsEditor
         {
 
         }
-        Point positionView = new Point(40, 50);
+        Point positionView;
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             
@@ -319,6 +319,9 @@ namespace GraphicsEditor
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             ImageFor.Scale = trackBar2.Value;
+            label2.Text = trackBar2.Value.ToString() + '%';
+            Draw();
+
         }
 
         private void pictureBox1_Resize(object sender, EventArgs e)
