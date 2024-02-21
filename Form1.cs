@@ -122,19 +122,25 @@ namespace GraphicsEditor
             longPress = false;
             ImageFor.AddPoint(e.Location, TypeClick.UpLeft);
         }
-        object i = new object();
+        Point? backPoint;
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-
-            
-            if (longPress)
+            if (isControl && longPress)
+            {
+                if(backPoint != null)
+                {
+                    positionView = new Point(positionView.X - (backPoint.Value.X - e.X), positionView.Y - (backPoint.Value.Y - e.Y));
+                }
+                backPoint = e.Location;
+            }
+            else if (longPress)
             {
                 ImageFor.AddPoint(e.Location, TypeClick.LongPress);
 
             }
           
                 
-                ImageFor.ViewPoint(e.Location);
+             ImageFor.ViewPoint(e.Location);
             
             Draw();
 
@@ -326,7 +332,7 @@ namespace GraphicsEditor
         bool isControl = false;
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Control)
+            if(e.KeyCode == Keys.ControlKey)
             {
                 isControl = true;
                 Cursor = Cursors.NoMove2D;
@@ -336,10 +342,11 @@ namespace GraphicsEditor
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Control)
+            if (e.KeyCode == Keys.ControlKey)
             {
                 isControl = false;
                 Cursor = Cursors.Default;
+                backPoint = null;
             }
                 
         }

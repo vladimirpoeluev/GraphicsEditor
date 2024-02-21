@@ -12,13 +12,14 @@ namespace GraphicsEditor
     internal class ImageForDrawing
     {
         public ICanvas CanvasD { get; private set; }
-        private int _scale = 100;
-        public int Scale { get 
+        private double _scale = 1;
+        public double Scale { get 
             {
                 return _scale;
-            } set 
+            } 
+            set 
             {
-                _scale = value;
+                _scale = value / 100;
             } 
         }
         public Size SizeWindow { get; set; }
@@ -58,11 +59,12 @@ namespace GraphicsEditor
         }
         public void ViewPoint(Point p)
         {
-            p.X -= positionView.X;
-            p.Y -= positionView.Y;
+            p.X = (int)((p.X - positionView.X) * Scale);
+            p.Y = (int)((p.Y - positionView.Y) * Scale);
 
             _bitmapView.Dispose();
-                _bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
+            Bitmap bm = CanvasD.GetBitmap();
+                _bitmapView = new Bitmap(bm, new Size((int)(bm.Width * Scale), (int)(bm.Height * Scale)));
                 if (_tool is IViewDrawingTool)
                 {
                     _bitmapView = ((IViewDrawingTool)_tool).GetView(_bitmapView, p);
