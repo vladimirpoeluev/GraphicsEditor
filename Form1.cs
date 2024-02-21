@@ -23,15 +23,17 @@ namespace GraphicsEditor
         int numberBitmap = 0;
         string path;
         ColorDialog colorDialog;
+        Point cursorPositiun;
         public Form1()
         {
             InitializeComponent();
-            ImageFor = new ImageForDrawing(new OrdinaryCanvas(), new LineDraw());
+            ImageFor = new ImageForDrawing(new OrdinaryCanvas(), new LineDraw(), pictureBox1.Size);
             path = "image.png";
             colorDialog = new ColorDialog();
             timer1.Start();
             bitmap = ImageFor.GetView(new Point(0, 0));
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
+            cursorPositiun = new Point(0, 0);   
 
         }
 
@@ -123,6 +125,8 @@ namespace GraphicsEditor
         object i = new object();
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
+
+            
             if (longPress)
             {
                 ImageFor.AddPoint(e.Location, TypeClick.LongPress);
@@ -131,9 +135,7 @@ namespace GraphicsEditor
           
                 
                 ImageFor.ViewPoint(e.Location);
-
-
-
+            
             Draw();
 
         }
@@ -164,7 +166,7 @@ namespace GraphicsEditor
             ICanvas canvas = new OrdinaryCanvas();
             canvas.AddLayer(l);
             canvas.SetActiveLayer(1);
-            ImageFor = new ImageForDrawing(canvas, new LineDraw());
+            ImageFor = new ImageForDrawing(canvas, new LineDraw(), pictureBox1.Size);
             path = fileDialog.FileName;
         }
 
@@ -267,9 +269,11 @@ namespace GraphicsEditor
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
+
             // Draw();
-            label1.Text = $"Ширина:\t{Width}\t Высота:\t{Height}\t Позиция:\t {Location.ToString()}";
+            cursorPositiun = Cursor.Position;
+            label1.Text = $"Ширина:\t{Width}\t Высота:\t{Height}\t Позиция:\t {cursorPositiun}\t";
+           
             
         }
 
@@ -291,13 +295,53 @@ namespace GraphicsEditor
         {
 
         }
-
+        Point positionView = new Point(40, 50);
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             
-            bitmap = ImageFor.GetView(new Point(0, 0));
+            bitmap = ImageFor.GetView(positionView);
             e.Graphics.DrawImage(bitmap, 0, 0);
             bitmap.Dispose();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            DrawingOptions.Color = Color.FromArgb(10, 0, 0, 0);
+           
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            ImageFor.Scale = trackBar2.Value;
+        }
+
+        private void pictureBox1_Resize(object sender, EventArgs e)
+        {
+            if(ImageFor != null)
+            ImageFor.SizeWindow = pictureBox1.Size;
+        }
+
+
+
+        bool isControl = false;
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Control)
+            {
+                isControl = true;
+                Cursor = Cursors.NoMove2D;
+            }
+                
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Control)
+            {
+                isControl = false;
+                Cursor = Cursors.Default;
+            }
+                
         }
     }
 }

@@ -52,21 +52,6 @@ namespace GraphicsEditor.Tools
 
         }
 
-        public Bitmap GetView(Bitmap bmp, Point p)
-        {
-            if (point == null)
-                return bmp;
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                int width = DrawingOptions.Width;
-                Pen pen = new Pen(DrawingOptions.Color, width);
-                g.DrawLine(pen, (Point)point, p);
-                p.X -= width / 2;
-                p.Y -= width / 2;
-                Brush brush = new SolidBrush(DrawingOptions.Color);
-                g.FillEllipse(brush, new RectangleF(p, new Size(width, width)));
-            }
-            return bmp;
-        }
+       
     }
 }

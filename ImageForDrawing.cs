@@ -21,22 +21,26 @@ namespace GraphicsEditor
                 _scale = value;
             } 
         }
-
+        public Size SizeWindow { get; set; }
+        Point positionView = new Point(0, 0);
         private ITool _tool;
         private Bitmap _bitmapView;
-        public ImageForDrawing(ICanvas canvas, IViewDrawingTool tool) 
+        public ImageForDrawing(ICanvas canvas, IViewDrawingTool tool, Size size) 
         { 
             SetTool(tool);
-            
+            SizeWindow = size;
             CanvasD = canvas;
             _bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
         }
 
         public Bitmap GetView(Point p)
         {
-            var result = new Bitmap(_bitmapView);
+            var result = new Bitmap(SizeWindow.Width, SizeWindow.Height);
             //_bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
-                
+            using (Graphics g = Graphics.FromImage(result)) {
+                g.DrawImage(_bitmapView, p);
+            }
+            positionView = p;
             return result;
             
             
@@ -44,17 +48,20 @@ namespace GraphicsEditor
 
         public void AddPoint(Point p, TypeClick type)
         {
-            
-                _tool.Draw(CanvasD.ActiveLayer.DrawLayer, p, type);
-                _bitmapView.Dispose();
-                _bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
+            p.X -= positionView.X;
+            p.Y -= positionView.Y;
+            _tool.Draw(CanvasD.ActiveLayer.DrawLayer, p, type);
+            _bitmapView.Dispose();
+            _bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
             
            
         }
         public void ViewPoint(Point p)
         {
-            
-                _bitmapView.Dispose();
+            p.X -= positionView.X;
+            p.Y -= positionView.Y;
+
+            _bitmapView.Dispose();
                 _bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
                 if (_tool is IViewDrawingTool)
                 {
