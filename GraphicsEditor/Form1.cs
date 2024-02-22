@@ -62,7 +62,7 @@ namespace GraphicsEditor
         }
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            ImageFor.AddPoint(e.Location, TypeClick.Click);
+            //ImageFor.AddPoint(e.Location, TypeClick.Click);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -113,22 +113,30 @@ namespace GraphicsEditor
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            longPress = true;
+            if (e.Button == MouseButtons.Left)
+                longPress = true;
             if (isControl)
                 Cursor = Cursors.NoMove2D;
             else
             {
                 if(e.Button == MouseButtons.Left)
-                ImageFor.AddPoint(e.Location, TypeClick.DownLeft);
+                {
+                    ImageFor.AddPoint(e.Location, TypeClick.DownLeft);
+                }
+                
             }
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            longPress = false;
+            if (e.Button == MouseButtons.Left)
+                longPress = false;
             if(!isControl)
                 if (e.Button == MouseButtons.Left)
+                {
                     ImageFor.AddPoint(e.Location, TypeClick.UpLeft);
+                }
+                    
         }
         Point? backPoint;
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)

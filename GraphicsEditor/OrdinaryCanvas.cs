@@ -19,7 +19,7 @@ namespace GraphicsEditor
         public OrdinaryCanvas()
         {
             ActiveLayer = layers[0];
-            bitmap = new Bitmap(400, 500);
+            bitmap = new Bitmap(ActiveLayer.DrawLayer.Width, ActiveLayer.DrawLayer.Height);
 
         }
         public ILayers[] Layers 
@@ -38,7 +38,7 @@ namespace GraphicsEditor
         public Bitmap GetBitmap()
         {
             bitmap.Dispose();
-            bitmap = new Bitmap(400, 500);
+            bitmap = new Bitmap(ActiveLayer.DrawLayer.Width, ActiveLayer.DrawLayer.Height);
             using (Graphics g = Graphics.FromImage(bitmap))
             {
                 foreach (var layer in layers)

@@ -20,7 +20,7 @@ namespace GraphicsEditor
         }
         public void Draw(Bitmap bmp, Point p, TypeClick type)
         {
-            if (type != TypeClick.Click)
+            if (type != TypeClick.UpLeft)
                 return;
             if(point == null)
             {
