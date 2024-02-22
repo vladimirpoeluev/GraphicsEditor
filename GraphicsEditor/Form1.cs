@@ -12,6 +12,7 @@ using System.Windows.Markup.Localizer;
 using System.Windows.Media.Imaging;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Threading;
 namespace GraphicsEditor
 {
     public partial class Form1 : Form
@@ -22,16 +23,18 @@ namespace GraphicsEditor
         int numberBitmap = 0;
         string path;
         ColorDialog colorDialog;
+        Point cursorPositiun;
         public Form1()
         {
             InitializeComponent();
-            ImageFor = new ImageForDrawing(new OrdinaryCanvas(), new LineDraw());
+            ImageFor = new ImageForDrawing(new OrdinaryCanvas(), new LineDraw(), pictureBox1.Size);
             path = "image.png";
             colorDialog = new ColorDialog();
             timer1.Start();
             bitmap = ImageFor.GetView(new Point(0, 0));
-
-
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
+            cursorPositiun = new Point(0, 0);
+            positionView = new Point(pictureBox1.Size.Width / 2, pictureBox1.Height / 2);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -52,9 +55,9 @@ namespace GraphicsEditor
         Bitmap bitmap;
         public void Draw()
         {
-            bitmap.Dispose();
-            bitmap = ImageFor.GetView(new Point(0, 0));
-            pictureBox1.Image = bitmap;
+            pictureBox1.Refresh();
+            pictureBox1.Invalidate();
+            Invalidate(); 
             
         }
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
@@ -119,16 +122,28 @@ namespace GraphicsEditor
             longPress = false;
             ImageFor.AddPoint(e.Location, TypeClick.UpLeft);
         }
-
+        Point? backPoint;
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (longPress)
+            if (isControl && longPress)
+            {
+                if(backPoint != null)
+                {
+                    positionView = new Point(positionView.X - (backPoint.Value.X - e.X), positionView.Y - (backPoint.Value.Y - e.Y));
+                }
+                backPoint = e.Location;
+            }
+            else if (longPress)
             {
                 ImageFor.AddPoint(e.Location, TypeClick.LongPress);
-                
+
             }
+          
+                
+             ImageFor.ViewPoint(e.Location);
+            
             Draw();
-            ImageFor.ViewPoint(e.Location);
+
         }
 
         private void квадратToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,7 +172,7 @@ namespace GraphicsEditor
             ICanvas canvas = new OrdinaryCanvas();
             canvas.AddLayer(l);
             canvas.SetActiveLayer(1);
-            ImageFor = new ImageForDrawing(canvas, new LineDraw());
+            ImageFor = new ImageForDrawing(canvas, new LineDraw(), pictureBox1.Size);
             path = fileDialog.FileName;
         }
 
@@ -260,7 +275,12 @@ namespace GraphicsEditor
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Draw();
+
+            // Draw();
+            cursorPositiun = Cursor.Position;
+            label1.Text = $"Ширина:\t{Width}\t Высота:\t{Height}\t Позиция:\t {cursorPositiun}\t";
+           
+            
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -280,6 +300,58 @@ namespace GraphicsEditor
         private void впередToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
 
+        }
+        Point positionView;
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            
+            bitmap = ImageFor.GetView(positionView);
+            e.Graphics.DrawImage(bitmap, 0, 0);
+            bitmap.Dispose();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            DrawingOptions.Color = Color.FromArgb(10, 0, 0, 0);
+           
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            ImageFor.Scale = trackBar2.Value;
+            label2.Text = trackBar2.Value.ToString() + '%';
+            Draw();
+
+        }
+
+        private void pictureBox1_Resize(object sender, EventArgs e)
+        {
+            if(ImageFor != null)
+            ImageFor.SizeWindow = pictureBox1.Size;
+        }
+
+
+
+        bool isControl = false;
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.ControlKey)
+            {
+                isControl = true;
+                Cursor = Cursors.NoMove2D;
+            }
+                
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.ControlKey)
+            {
+                isControl = false;
+                Cursor = Cursors.Default;
+                backPoint = null;
+            }
+                
         }
     }
 }

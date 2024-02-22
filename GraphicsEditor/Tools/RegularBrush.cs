@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Markup;
 
 namespace GraphicsEditor.Tools
@@ -13,6 +14,7 @@ namespace GraphicsEditor.Tools
         Point? point;
         private void DrawLine(Bitmap bmp, Point p1)
         {
+            lock(bmp)
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 int width = DrawingOptions.Width;
@@ -27,40 +29,29 @@ namespace GraphicsEditor.Tools
         }
         public void Draw(Bitmap bmp, Point p, TypeClick type)
         {
-            if(type == TypeClick.UpLeft)
-            {
-                point = null;
-                return;
-            }
-            if (type != TypeClick.LongPress)
-                return;
-            if (point == null)
-            {
-                point = p;
-            }
-            else
-            {
-                DrawLine(bmp, p);
-                point = p;
-            }
+            
+                
+                    if (type == TypeClick.UpLeft)
+                    {
+                        point = null;
+                        return;
+                    }
+                    if (type != TypeClick.LongPress)
+                        return;
+                    if (point == null)
+                    {
+                        point = p;
+                    }
+                    else
+                    {
+                        DrawLine(bmp, p);
+                        point = p;
+                    }
+               
+            
 
         }
 
-        public Bitmap GetView(Bitmap bmp, Point p)
-        {
-            if (point == null)
-                return bmp;
-            using (Graphics g = Graphics.FromImage(bmp))
-            {
-                int width = DrawingOptions.Width;
-                Pen pen = new Pen(DrawingOptions.Color, width);
-                g.DrawLine(pen, (Point)point, p);
-                p.X -= width / 2;
-                p.Y -= width / 2;
-                Brush brush = new SolidBrush(DrawingOptions.Color);
-                g.FillEllipse(brush, new RectangleF(p, new Size(width, width)));
-            }
-            return bmp;
-        }
+       
     }
 }
