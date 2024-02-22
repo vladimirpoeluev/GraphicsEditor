@@ -49,21 +49,44 @@ namespace GraphicsEditor
 
         public void AddPoint(Point p, TypeClick type)
         {
-            p.X = (int)((p.X - positionView.X) * Scale);
-            p.Y = (int)((p.Y - positionView.Y) * Scale);
+            p.X = (int)((p.X - positionView.X) / Scale);
+            p.Y = (int)((p.Y - positionView.Y) / Scale);
             _tool.Draw(CanvasD.ActiveLayer.DrawLayer, p, type);
             _bitmapView.Dispose();
             _bitmapView = new Bitmap(CanvasD.GetBitmap());
             
            
         }
+        private Bitmap TransparentBackground(Bitmap bitmap)
+        {
+            Bitmap fonBitmap = (new Bitmap(bitmap.Width, bitmap.Height));
+            using (Graphics g = Graphics.FromImage(fonBitmap))
+            {
+                g.Clear(Color.White);
+                for (int i = 0; i * 10 < bitmap.Width; i++)
+                {
+                    for (int j = 0; j * 10 < bitmap.Height; j++)
+                    {
+                        if((i + j) % 2 != 0)
+                        {
+                            g.FillRectangle(Brushes.Gray, i * 10, j * 10, 10, 10);
+                        }
+                    }
+                }
+                g.DrawImage(bitmap, 0, 0);
+                bitmap = new Bitmap(fonBitmap);
+                bitmap.Dispose();
+            }
+            return fonBitmap;
+        }
         public void ViewPoint(Point p)
         {
-            p.X = (int)((p.X - positionView.X));
-            p.Y = (int)((p.Y - positionView.Y));
+            p.X = (int)((p.X - positionView.X) / Scale);
+            p.Y = (int)((p.Y - positionView.Y) / Scale);
 
             _bitmapView.Dispose();
             Bitmap bm = CanvasD.GetBitmap();
+            bm = TransparentBackground(bm);
             _bitmapView = new Bitmap(bm, new Size((int)(bm.Width * Scale), (int)(bm.Height * Scale)));
                 if (_tool is IViewDrawingTool)
                 {

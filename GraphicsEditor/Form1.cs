@@ -114,9 +114,13 @@ namespace GraphicsEditor
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             longPress = true;
-            ImageFor.AddPoint(e.Location, TypeClick.DownLeft);
             if (isControl)
                 Cursor = Cursors.NoMove2D;
+            else
+            {
+                
+                ImageFor.AddPoint(e.Location, TypeClick.DownLeft);
+            }
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
