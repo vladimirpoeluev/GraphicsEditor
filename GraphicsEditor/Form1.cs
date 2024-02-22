@@ -126,6 +126,7 @@ namespace GraphicsEditor
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             longPress = false;
+            if(!isControl)
             ImageFor.AddPoint(e.Location, TypeClick.UpLeft);
         }
         Point? backPoint;

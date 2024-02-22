@@ -53,7 +53,7 @@ namespace GraphicsEditor
             p.Y = (int)((p.Y - positionView.Y) / Scale);
             _tool.Draw(CanvasD.ActiveLayer.DrawLayer, p, type);
             _bitmapView.Dispose();
-            _bitmapView = new Bitmap(CanvasD.GetBitmap());
+            ViewPoint(p);
             
            
         }
@@ -87,11 +87,12 @@ namespace GraphicsEditor
             _bitmapView.Dispose();
             Bitmap bm = CanvasD.GetBitmap();
             bm = TransparentBackground(bm);
+            if (_tool is IViewDrawingTool)
+            {
+                _bitmapView = ((IViewDrawingTool)_tool).GetView(bm, p);
+            }
             _bitmapView = new Bitmap(bm, new Size((int)(bm.Width * Scale), (int)(bm.Height * Scale)));
-                if (_tool is IViewDrawingTool)
-                {
-                    _bitmapView = ((IViewDrawingTool)_tool).GetView(_bitmapView, p);
-                }
+                
             
             
             

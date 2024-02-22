@@ -65,10 +65,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -424,22 +424,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(849, 25);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
-            // trackBar2
-            // 
-            this.trackBar2.BackColor = System.Drawing.SystemColors.Control;
-            this.trackBar2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trackBar2.LargeChange = 20;
-            this.trackBar2.Location = new System.Drawing.Point(599, 0);
-            this.trackBar2.Margin = new System.Windows.Forms.Padding(0);
-            this.trackBar2.Maximum = 250;
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(250, 25);
-            this.trackBar2.SmallChange = 10;
-            this.trackBar2.TabIndex = 0;
-            this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBar2.Value = 100;
-            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -450,10 +434,22 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Состояние";
             // 
-            // timer1
+            // trackBar2
             // 
-            this.timer1.Interval = 15;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.trackBar2.BackColor = System.Drawing.SystemColors.Control;
+            this.trackBar2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trackBar2.LargeChange = 20;
+            this.trackBar2.Location = new System.Drawing.Point(599, 0);
+            this.trackBar2.Margin = new System.Windows.Forms.Padding(0);
+            this.trackBar2.Maximum = 250;
+            this.trackBar2.Minimum = 10;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(250, 25);
+            this.trackBar2.SmallChange = 10;
+            this.trackBar2.TabIndex = 0;
+            this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar2.Value = 100;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
             // 
             // label2
             // 
@@ -464,6 +460,11 @@
             this.label2.Size = new System.Drawing.Size(74, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "100%";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 15;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
