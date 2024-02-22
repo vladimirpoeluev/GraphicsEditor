@@ -115,6 +115,8 @@ namespace GraphicsEditor
         {
             longPress = true;
             ImageFor.AddPoint(e.Location, TypeClick.DownLeft);
+            if (isControl)
+                Cursor = Cursors.NoMove2D;
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
@@ -312,7 +314,7 @@ namespace GraphicsEditor
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            DrawingOptions.Color = Color.FromArgb(10, 0, 0, 0);
+            DrawingOptions.Color = Color.FromArgb(0, 0, 0, 0);
            
         }
 

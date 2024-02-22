@@ -49,8 +49,8 @@ namespace GraphicsEditor
 
         public void AddPoint(Point p, TypeClick type)
         {
-            p.X = (int)((p.X - positionView.X));
-            p.Y = (int)((p.Y - positionView.Y));
+            p.X = (int)((p.X - positionView.X) * Scale);
+            p.Y = (int)((p.Y - positionView.Y) * Scale);
             _tool.Draw(CanvasD.ActiveLayer.DrawLayer, p, type);
             _bitmapView.Dispose();
             _bitmapView = new Bitmap(CanvasD.GetBitmap());
@@ -59,8 +59,8 @@ namespace GraphicsEditor
         }
         public void ViewPoint(Point p)
         {
-            p.X = (int)((p.X - positionView.X) - Scale);
-            p.Y = (int)((p.Y - positionView.Y) - Scale);
+            p.X = (int)((p.X - positionView.X));
+            p.Y = (int)((p.Y - positionView.Y));
 
             _bitmapView.Dispose();
             Bitmap bm = CanvasD.GetBitmap();

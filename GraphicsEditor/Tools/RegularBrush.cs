@@ -17,6 +17,7 @@ namespace GraphicsEditor.Tools
             lock(bmp)
             using (Graphics g = Graphics.FromImage(bmp))
             {
+                    g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
                 int width = DrawingOptions.Width;
                 Pen pen = new Pen(DrawingOptions.Color, width);
                 g.DrawLine(pen, (Point)point, p1);

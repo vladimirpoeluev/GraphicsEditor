@@ -40,3 +40,13 @@ C:\Users\Student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\obj\Debug\Graphi
 C:\Users\Student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.pdb
 C:\Users\student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.csproj.AssemblyReference.cache
 C:\Users\student\Desktop\Graphics\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\bin\Debug\GraphicsEditor.exe.config
+C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\bin\Debug\GraphicsEditor.exe
+C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\bin\Debug\GraphicsEditor.pdb
+C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\obj\Debug\GraphicsEditor.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\obj\Debug\GraphicsEditor.Form1.resources
+C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\obj\Debug\GraphicsEditor.Properties.Resources.resources
+C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\obj\Debug\GraphicsEditor.csproj.GenerateResource.cache
+C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\obj\Debug\GraphicsEditor.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\obj\Debug\GraphicsEditor.exe
+C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\obj\Debug\GraphicsEditor.pdb
