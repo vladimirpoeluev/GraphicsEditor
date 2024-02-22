@@ -35,6 +35,23 @@ namespace GraphicsEditor
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
             cursorPositiun = new Point(0, 0);
             positionView = new Point(pictureBox1.Size.Width / 2, pictureBox1.Height / 2);
+            
+            pictureBox1.MouseWheel += (ob, e) =>
+            {
+                if (isControl)
+                {
+                    try
+                    {
+                        trackBar2.Value += e.Delta / 10;
+                        ImageFor.Scale = trackBar2.Value;
+                        Draw();
+                    }catch (Exception ex)
+                    {
+
+                    }
+                    
+                }
+            };
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
