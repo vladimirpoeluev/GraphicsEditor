@@ -44,12 +44,11 @@ namespace GraphicsEditor
                     {
                         trackBar2.Value += e.Delta / 10;
                         ImageFor.Scale = trackBar2.Value;
-                        Draw();
                     }catch (Exception ex)
                     {
 
                     }
-                    
+                    Draw();
                 }
             };
         }
@@ -73,8 +72,8 @@ namespace GraphicsEditor
         public void Draw()
         {
             pictureBox1.Refresh();
-            pictureBox1.Invalidate();
-            Invalidate(); 
+            
+            
             
         }
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
@@ -198,10 +197,7 @@ namespace GraphicsEditor
             fileDialog.ShowDialog();
             if (fileDialog.FileName == null)
                 return;
-            ILayers l = new Layer()
-            {
-                DrawLayer = new Bitmap(fileDialog.FileName)
-            };
+            ILayers l = new Layer(fileDialog.FileName);
             ICanvas canvas = new OrdinaryCanvas();
             canvas.AddLayer(l);
             canvas.SetActiveLayer(1);
@@ -372,6 +368,7 @@ namespace GraphicsEditor
             {
                 isControl = true;
                 Cursor = Cursors.NoMove2D;
+                
             }
                 
         }
