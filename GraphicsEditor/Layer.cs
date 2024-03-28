@@ -18,7 +18,7 @@ namespace GraphicsEditor
         }
         public Layer(string name)
         {
-            DrawLayer = new Bitmap(name);
+            DrawLayer = new Bitmap(name, true);
         }
 
         public Layer(int  width, int height)

@@ -44,11 +44,13 @@ namespace GraphicsEditor
                     {
                         trackBar2.Value += e.Delta / 10;
                         ImageFor.Scale = trackBar2.Value;
-                    }catch (Exception ex)
+                        Draw();
+                    }
+                    catch (Exception ex)
                     {
 
                     }
-                    Draw();
+                    
                 }
             };
         }
@@ -66,8 +68,8 @@ namespace GraphicsEditor
             
         }
 
-        Point? point;
-        Bitmap bmp = new Bitmap(500, 400);
+        
+       
         Bitmap bitmap;
         public void Draw()
         {
@@ -88,18 +90,12 @@ namespace GraphicsEditor
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            if(numberBitmap < (bitmaps.Count - 1))
-            {
-                bmp = bitmaps[++numberBitmap];
-            }
+           
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            if (numberBitmap >= 0)
-            {
-                bmp = bitmaps[--numberBitmap];
-            }
+           
         }
 
         private void назадToolStripMenuItem_Click(object sender, EventArgs e)
@@ -186,16 +182,19 @@ namespace GraphicsEditor
         private void сохранитьКакToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "picture png (*.png)|*.png";
             saveFile.ShowDialog();
-            ImageFor.CanvasD.GetBitmap().Save(saveFile.FileName + ".png", System.Drawing.Imaging.ImageFormat.Png);
+            if(saveFile.ShowDialog() == DialogResult.OK)
+                ImageFor.CanvasD.GetBitmap().Save(saveFile.FileName + ".png", System.Drawing.Imaging.ImageFormat.Png);
             path = saveFile.FileName;
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "picture png (*.png)|*.png";
             fileDialog.ShowDialog();
-            if (fileDialog.FileName == null)
+            if (!fileDialog.CheckPathExists)
                 return;
             ILayers l = new Layer(fileDialog.FileName);
             ICanvas canvas = new OrdinaryCanvas();

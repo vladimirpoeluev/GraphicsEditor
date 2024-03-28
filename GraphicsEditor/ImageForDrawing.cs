@@ -39,6 +39,7 @@ namespace GraphicsEditor
             var result = new Bitmap(SizeWindow.Width, SizeWindow.Height);
             //_bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
             using (Graphics g = Graphics.FromImage(result)) {
+                g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.AssumeLinear;
                 g.DrawImage(_bitmapView, p);
             }
             positionView = p;
@@ -94,7 +95,7 @@ namespace GraphicsEditor
             }
             _bitmapView = new Bitmap(bm, new Size((int)(bm.Width * Scale), (int)(bm.Height * Scale)));
                 
-            
+            bm.Dispose();
             
             
         }

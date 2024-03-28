@@ -43,7 +43,7 @@ namespace GraphicsEditor
             {
                 foreach (var layer in layers)
                 {
-                    g.DrawImage(layer.DrawLayer, 0, 0);
+                    g.DrawImage(layer.DrawLayer, 0, 0, ActiveLayer.DrawLayer.Width, ActiveLayer.DrawLayer.Height);
                 }
 
             }
