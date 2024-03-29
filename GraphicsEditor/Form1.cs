@@ -14,7 +14,6 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
-using System.Drawing.Printing;
 namespace GraphicsEditor
 {
     public partial class Form1 : Form
@@ -47,9 +46,6 @@ namespace GraphicsEditor
                     {
                         trackBar2.Value += e.Delta / 10;
                         ImageFor.Scale = trackBar2.Value;
-                        label2.Text = trackBar2.Value.ToString() + '%';
-                        ImageFor.ViewPoint(e.Location);
-                        
                         Draw();
                     }
                     catch (Exception ex)
@@ -356,7 +352,6 @@ namespace GraphicsEditor
         {
             ImageFor.Scale = trackBar2.Value;
             label2.Text = trackBar2.Value.ToString() + '%';
-            ImageFor.ViewPoint(new Point(0, 0));
             Draw();
 
         }
@@ -418,50 +413,32 @@ namespace GraphicsEditor
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ImageFor.Scale = 10;
-            label2.Text = "10" + '%';
-            ImageFor.ViewPoint(new Point(0, 0));
-            Draw();
+
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            ImageFor.Scale = 50;
-            label2.Text = "50" + '%';
-            ImageFor.ViewPoint(new Point(0, 0));
-            Draw();
+
         }
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            ImageFor.Scale = 100;
-            label2.Text = "100" + '%';
-            ImageFor.ViewPoint(new Point(0, 0));
-            Draw();
+
         }
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
-            ImageFor.Scale = 150;
-            label2.Text = "150" + '%';
-            ImageFor.ViewPoint(new Point(0, 0));
-            Draw();
+
         }
 
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
         {
-            ImageFor.Scale = 200;
-            label2.Text = "200" + '%';
-            ImageFor.ViewPoint(new Point(0, 0));
-            Draw();
+
         }
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
-            ImageFor.Scale = 250;
-            label2.Text = "250" + '%';
-            ImageFor.ViewPoint(new Point(0, 0));
-            Draw();
+
         }
 
         private void строкаСостоянияToolStripMenuItem_Click(object sender, EventArgs e)
@@ -473,30 +450,7 @@ namespace GraphicsEditor
 
         private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Dispose();
             Application.Exit();
-        }
-
-        private void новыйToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var dialog = new NewCanvasForm();
-            dialog.ShowDialog();
-            ImageFor = new ImageForDrawing(new OrdinaryCanvas(dialog.SizeCanvas.Width, dialog.SizeCanvas.Height), new LineDraw(), pictureBox1.Size);
-            dialog.Dispose();
-        }
-        Bitmap memoryImage;
-        private void печататьToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            Size s = this.Size;
-            memoryImage = ImageFor.CanvasD.GetBitmap();
-            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
-
-            printDocument1.Print();
-        }
-
-        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            e.Graphics.DrawImage(memoryImage, 0, 0);
         }
     }
 }

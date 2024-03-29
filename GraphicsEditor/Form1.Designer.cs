@@ -75,7 +75,6 @@
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -124,7 +123,6 @@
             this.новыйToolStripMenuItem.Name = "новыйToolStripMenuItem";
             this.новыйToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.новыйToolStripMenuItem.Text = "Новый";
-            this.новыйToolStripMenuItem.Click += new System.EventHandler(this.новыйToolStripMenuItem_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
@@ -152,7 +150,6 @@
             this.печататьToolStripMenuItem.Name = "печататьToolStripMenuItem";
             this.печататьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.печататьToolStripMenuItem.Text = "Печатать";
-            this.печататьToolStripMenuItem.Click += new System.EventHandler(this.печататьToolStripMenuItem_Click_1);
             // 
             // выйтиToolStripMenuItem
             // 
@@ -529,10 +526,6 @@
             this.toolStripMenuItem7.Text = "250%";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -614,7 +607,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
-        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
 
