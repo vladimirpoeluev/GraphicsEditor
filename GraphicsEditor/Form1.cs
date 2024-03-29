@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 namespace GraphicsEditor
 {
     public partial class Form1 : Form
@@ -27,6 +28,7 @@ namespace GraphicsEditor
         public Form1()
         {
             InitializeComponent();
+            button1.BackColor = DrawingOptions.Color;
             ImageFor = new ImageForDrawing(new OrdinaryCanvas(), new LineDraw(), pictureBox1.Size);
             path = "image.png";
             colorDialog = new ColorDialog();
@@ -183,18 +185,20 @@ namespace GraphicsEditor
         {
             SaveFileDialog saveFile = new SaveFileDialog();
             saveFile.Filter = "picture png (*.png)|*.png";
-            saveFile.ShowDialog();
             if(saveFile.ShowDialog() == DialogResult.OK)
+            {
                 ImageFor.CanvasD.GetBitmap().Save(saveFile.FileName + ".png", System.Drawing.Imaging.ImageFormat.Png);
-            path = saveFile.FileName;
+                path = saveFile.FileName;
+            }
+
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "picture png (*.png)|*.png";
-            fileDialog.ShowDialog();
-            if (!fileDialog.CheckPathExists)
+            
+            if (fileDialog.ShowDialog() != DialogResult.OK)
                 return;
             ILayers l = new Layer(fileDialog.FileName);
             ICanvas canvas = new OrdinaryCanvas();
@@ -381,6 +385,58 @@ namespace GraphicsEditor
                 backPoint = null;
             }
                 
+        }
+
+        
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ImageFor.CanvasD.GetBitmap().Save(path, System.Drawing.Imaging.ImageFormat.Png);
+        }
+
+        private void папкаПоУмолчаниюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            
+            if(dialog.ShowDialog() == DialogResult.OK)
+                path = dialog.SelectedPath + "newFile.png";
+            
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void строкаСостоянияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ((ToolStripMenuItem)sender).Checked = !((ToolStripMenuItem)sender).Checked;
+            tableLayoutPanel2.Visible = ((ToolStripMenuItem)sender).Checked;
         }
     }
 }
