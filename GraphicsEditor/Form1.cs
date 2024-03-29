@@ -48,13 +48,16 @@ namespace GraphicsEditor
                         ImageFor.Scale = trackBar2.Value;
                         Draw();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
 
                     }
                     
                 }
             };
+            foreach (string nameLang in LangNames.GetLanguages())
+                toolStripComboBox1.Items.Add(nameLang);
+            SetLang();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -70,7 +73,26 @@ namespace GraphicsEditor
             
         }
 
-        
+        void SetLang()
+        {
+            новыйToolStripMenuItem.Text = LangNames.GetTranslete("buttn.newfile");
+            сохранитьToolStripMenuItem.Text = LangNames.GetTranslete("buttn.save");
+            сохранитьКакToolStripMenuItem.Text = LangNames.GetTranslete("buttn.saveas");
+            печататьToolStripMenuItem.Text = LangNames.GetTranslete("buttn.print");
+            выйтиToolStripMenuItem.Text = LangNames.GetTranslete("buttn.exit");
+            открытьToolStripMenuItem.Text = LangNames.GetTranslete("buttn.open");
+            инструментыToolStripMenuItem.Text = LangNames.GetTranslete("buttn.tool");
+            файлToolStripMenuItem.Text = LangNames.GetTranslete("buttn.file");
+            видToolStripMenuItem.Text = LangNames.GetTranslete("buttn.view");
+            настройкиToolStripMenuItem.Text = LangNames.GetTranslete("buttn.settings");
+            назадToolStripMenuItem.Text = LangNames.GetTranslete("buttn.paneltools");
+            свойстваToolStripMenuItem.Text = LangNames.GetTranslete("buttn.");
+            инструментыToolStripMenuItem.Text = LangNames.GetTranslete("buttn.tool");
+            инструментыToolStripMenuItem.Text = LangNames.GetTranslete("buttn.tool");
+            инструментыToolStripMenuItem.Text = LangNames.GetTranslete("buttn.tool");
+            инструментыToolStripMenuItem.Text = LangNames.GetTranslete("buttn.tool");
+            инструментыToolStripMenuItem.Text = LangNames.GetTranslete("buttn.tool");
+        }
        
         Bitmap bitmap;
         public void Draw()
@@ -451,6 +473,22 @@ namespace GraphicsEditor
         private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void языкToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripComboBox1_TextChanged(object sender, EventArgs e)
+        {
+            LangNames.SetLanguage(toolStripComboBox1.Text);
+            SetLang();
         }
     }
 }

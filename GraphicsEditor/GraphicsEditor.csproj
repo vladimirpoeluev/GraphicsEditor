@@ -63,6 +63,7 @@
     <Compile Include="ImageForDrawing.cs" />
     <Compile Include="Interface\ITool.cs" />
     <Compile Include="Interface\IViewDrawingTool.cs" />
+    <Compile Include="LangNames.cs" />
     <Compile Include="Layer.cs" />
     <Compile Include="Tools\LineDraw.cs" />
     <Compile Include="OrdinaryCanvas.cs" />
@@ -84,6 +85,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Langs\En_en.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Langs\Ru_ru.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
