@@ -47,6 +47,8 @@ namespace GraphicsEditor
                     {
                         trackBar2.Value += e.Delta / 10;
                         ImageFor.Scale = trackBar2.Value;
+                        label2.Text = (ImageFor.Scale * 100).ToString() + "%";
+                        ImageFor.ViewPoint(e.Location);
                         Draw();
                     }
                     catch (Exception)
@@ -389,6 +391,7 @@ namespace GraphicsEditor
         {
             ImageFor.Scale = trackBar2.Value;
             label2.Text = trackBar2.Value.ToString() + '%';
+            ImageFor.ViewPoint(new Point(0, 0));
             Draw();
 
         }
@@ -450,32 +453,50 @@ namespace GraphicsEditor
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            ImageFor.Scale = 10;
+            label2.Text = "10" + '%';
+            ImageFor.ViewPoint(new Point(0, 0));
+            Draw();
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-
+            ImageFor.Scale = 50;
+            label2.Text = "50" + '%';
+            ImageFor.ViewPoint(new Point(0, 0));
+            Draw();
         }
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
-
+            ImageFor.Scale = 100;
+            label2.Text = "100" + '%';
+            ImageFor.ViewPoint(new Point(0, 0));
+            Draw();
         }
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
-
+            ImageFor.Scale = 150;
+            label2.Text = "150" + '%';
+            ImageFor.ViewPoint(new Point(0, 0));
+            Draw();
         }
 
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
         {
-
+            ImageFor.Scale = 200;
+            label2.Text = "200" + '%';
+            ImageFor.ViewPoint(new Point(0, 0));
+            Draw();
         }
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
-
+            ImageFor.Scale = 250;
+            label2.Text = "250" + '%';
+            ImageFor.ViewPoint(new Point(0, 0));
+            Draw();
         }
 
         private void строкаСостоянияToolStripMenuItem_Click(object sender, EventArgs e)
