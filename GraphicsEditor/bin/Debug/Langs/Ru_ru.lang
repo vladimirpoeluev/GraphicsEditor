@@ -2,7 +2,7 @@
 buttn.save=Сохранить
 buttn.saveas=Сохранить как
 buttn.open=Открыть
-buttn.pring=Печать
+buttn.print=Печать
 buttn.propert=Свойства
 buttn.zoom=Масштраб
 buttn.exit=Выход
@@ -21,3 +21,7 @@ buttn.draw.figure=Фигуры
 buttn.draw.brush.rectangle=Прямоугольник
 buttn.eraser=Стерка
 buttn.hidepanel=Скрыть панель
+buttn.file=Файл
+buttn.view=Вид
+buttn.settings=Настройки
+buttn.tool=Инструменты

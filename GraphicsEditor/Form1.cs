@@ -86,12 +86,22 @@ namespace GraphicsEditor
             видToolStripMenuItem.Text = LangNames.GetTranslete("buttn.view");
             настройкиToolStripMenuItem.Text = LangNames.GetTranslete("buttn.settings");
             назадToolStripMenuItem.Text = LangNames.GetTranslete("buttn.paneltools");
-            свойстваToolStripMenuItem.Text = LangNames.GetTranslete("buttn.");
-            инструментыToolStripMenuItem.Text = LangNames.GetTranslete("buttn.tool");
-            инструментыToolStripMenuItem.Text = LangNames.GetTranslete("buttn.tool");
-            инструментыToolStripMenuItem.Text = LangNames.GetTranslete("buttn.tool");
-            инструментыToolStripMenuItem.Text = LangNames.GetTranslete("buttn.tool");
-            инструментыToolStripMenuItem.Text = LangNames.GetTranslete("buttn.tool");
+            свойстваToolStripMenuItem.Text = LangNames.GetTranslete("buttn.propert");
+            строкаСостоянияToolStripMenuItem.Text = LangNames.GetTranslete("buttn.linestats");
+            впередToolStripMenuItem.Text = LangNames.GetTranslete("buttn.zoom");
+            языкToolStripMenuItem.Text = LangNames.GetTranslete("buttn.lang");
+            папкаПоУмолчаниюToolStripMenuItem.Text = LangNames.GetTranslete("buttn.dirdefault");
+            назадToolStripMenuItem1.Text = LangNames.GetTranslete("buttn.back");
+            впередToolStripMenuItem1.Text = LangNames.GetTranslete("buttn.next");
+            рисованиеToolStripMenuItem.Text = LangNames.GetTranslete("buttn.draw");
+            линииToolStripMenuItem.Text = LangNames.GetTranslete("buttn.draw.line");
+            обычнаяToolStripMenuItem.Text = LangNames.GetTranslete("buttn.draw.line.defalt");
+            кистиToolStripMenuItem.Text = LangNames.GetTranslete("buttn.draw.brush");
+            обычнаяToolStripMenuItem1.Text = LangNames.GetTranslete("buttn.draw.brush.defalt");
+            фигурыToolStripMenuItem.Text = LangNames.GetTranslete("buttn.draw.figure");
+            квадратToolStripMenuItem.Text = LangNames.GetTranslete("buttn.draw.brush.rectangle");
+            button3.Text = LangNames.GetTranslete("buttn.eraser");
+            button2.Text = LangNames.GetTranslete("buttn.hidepanel");
         }
        
         Bitmap bitmap;
