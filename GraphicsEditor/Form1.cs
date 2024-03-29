@@ -14,6 +14,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Drawing.Printing;
 namespace GraphicsEditor
 {
     public partial class Form1 : Form
@@ -159,6 +160,7 @@ namespace GraphicsEditor
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
+            
             if (e.Button == MouseButtons.Left)
                 longPress = true;
             if (isControl)
@@ -171,6 +173,7 @@ namespace GraphicsEditor
                 }
                 
             }
+            
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
@@ -187,6 +190,7 @@ namespace GraphicsEditor
         Point? backPoint;
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
+           
             if (isControl && longPress)
             {
                 if(backPoint != null)
@@ -200,11 +204,12 @@ namespace GraphicsEditor
                 ImageFor.AddPoint(e.Location, TypeClick.LongPress);
 
             }
-          
-                
-             ImageFor.ViewPoint(e.Location);
+
+            
+            ImageFor.ViewPoint(e.Location);
             
             Draw();
+            label1.Text = $"\t{ImageFor.CanvasD.ActiveLayer.DrawLayer.Width}\tx\t{ImageFor.CanvasD.ActiveLayer.DrawLayer.Height}\t\t {e.Location}\t";
 
         }
 
@@ -342,7 +347,7 @@ namespace GraphicsEditor
 
             // Draw();
             cursorPositiun = Cursor.Position;
-            label1.Text = $"Ширина:\t{Width}\t Высота:\t{Height}\t Позиция:\t {cursorPositiun}\t";
+            
            
             
         }
@@ -499,6 +504,24 @@ namespace GraphicsEditor
         {
             LangNames.SetLanguage(toolStripComboBox1.Text);
             SetLang();
+        }
+        Bitmap memoryImage;
+        private void печататьToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            
+            memoryImage = ImageFor.CanvasD.GetBitmap();
+            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
+            printDocument1.Print();
+        }
+
+        private void новыйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(memoryImage, 0, 0);
         }
     }
 }
