@@ -22,6 +22,13 @@ namespace GraphicsEditor
             bitmap = new Bitmap(ActiveLayer.DrawLayer.Width, ActiveLayer.DrawLayer.Height);
 
         }
+        public OrdinaryCanvas(int w, int h)
+        {
+            layers[0] = new Layer(w, h);
+            ActiveLayer = layers[0];
+            bitmap = new Bitmap(ActiveLayer.DrawLayer.Width, ActiveLayer.DrawLayer.Height);
+
+        }
         public ILayers[] Layers 
         {
             get

@@ -21,7 +21,7 @@ namespace GraphicsEditor
             DrawLayer = new Bitmap(name, true);
         }
 
-        public Layer(int  width, int height)
+        public Layer(int width, int height)
         {
             DrawLayer = new Bitmap(width, height);
         }

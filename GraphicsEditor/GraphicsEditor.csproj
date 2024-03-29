@@ -64,6 +64,12 @@
     <Compile Include="Interface\ITool.cs" />
     <Compile Include="Interface\IViewDrawingTool.cs" />
     <Compile Include="Layer.cs" />
+    <Compile Include="NewCanvasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCanvasForm.Designer.cs">
+      <DependentUpon>NewCanvasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\LineDraw.cs" />
     <Compile Include="OrdinaryCanvas.cs" />
     <Compile Include="Program.cs" />
@@ -73,6 +79,9 @@
     <Compile Include="Tools\RegularBrush.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCanvasForm.resx">
+      <DependentUpon>NewCanvasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
