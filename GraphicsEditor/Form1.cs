@@ -391,15 +391,23 @@ namespace GraphicsEditor
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ImageFor.CanvasD.GetBitmap().Save(path, System.Drawing.Imaging.ImageFormat.Png);
+            try
+            {
+                ImageFor.CanvasD.GetBitmap().Save(path, System.Drawing.Imaging.ImageFormat.Png);
+            }
+            catch
+            {
+                MessageBox.Show("Невозможно сохранить файл в папку по умолчанию", "Измените папку по умолчанию");
+            }
         }
 
         private void папкаПоУмолчаниюToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
             
-            if(dialog.ShowDialog() == DialogResult.OK)
-                path = dialog.SelectedPath + "newFile.png";
+                if (dialog.ShowDialog() == DialogResult.OK)
+                    path = dialog.SelectedPath + "\\newFile.png";
+           
             
         }
 
@@ -437,6 +445,12 @@ namespace GraphicsEditor
         {
             ((ToolStripMenuItem)sender).Checked = !((ToolStripMenuItem)sender).Checked;
             tableLayoutPanel2.Visible = ((ToolStripMenuItem)sender).Checked;
+            
+        }
+
+        private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

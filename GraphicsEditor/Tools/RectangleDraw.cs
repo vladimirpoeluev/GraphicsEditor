@@ -29,6 +29,7 @@ namespace GraphicsEditor.Tools
                     yMax = point1.Value.Y;
                     yMin = point2.Value.Y;
                 }
+                g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
 
                 Pen p = new Pen(DrawingOptions.Color, DrawingOptions.Width);
                 System.Drawing.Rectangle rectangle = new System.Drawing.Rectangle(new Point(xMin, yMin),
@@ -88,7 +89,7 @@ namespace GraphicsEditor.Tools
                     yMax = point1.Value.Y;
                     yMin = p.Y;
                 }
-
+                g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
                 Pen pen = new Pen(DrawingOptions.Color, DrawingOptions.Width);
                 System.Drawing.Rectangle rectangle = new System.Drawing.Rectangle(new Point(xMin, yMin),
                     new Size(xMax - xMin, yMax - yMin));

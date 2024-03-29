@@ -14,6 +14,7 @@ namespace GraphicsEditor
         {
             using(Graphics g = Graphics.FromImage(bmp))
             {
+                g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
                 g.DrawLine(new Pen(DrawingOptions.Color, DrawingOptions.Width), (Point)point, p1);
             }
             
@@ -40,6 +41,7 @@ namespace GraphicsEditor
                 return bitmap;
             using (Graphics g = Graphics.FromImage(bitmap))
             {
+                g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
                 g.DrawLine(new Pen(DrawingOptions.Color, DrawingOptions.Width), (Point)point, p);
             }
             return bitmap;
