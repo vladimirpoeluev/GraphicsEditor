@@ -52,3 +52,4 @@ C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\obj\Debug\Grap
 C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\obj\Debug\GraphicsEditor.pdb
 C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\bin\Debug\Langs\En_en.lang
 C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\bin\Debug\Langs\Ru_ru.lang
+C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\obj\Debug\GraphicsEditor.AddNewCanvas.resources

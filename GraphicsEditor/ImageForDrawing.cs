@@ -40,7 +40,21 @@ namespace GraphicsEditor
             //_bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
             using (Graphics g = Graphics.FromImage(result)) {
                 g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.AssumeLinear;
-                g.DrawImage(_bitmapView, p);
+                Rectangle destRectangle2 = new Rectangle(p.X, p.Y, (int)(_bitmapView.Width), (int)(_bitmapView.Height));
+
+                int xPositionDraw = 0;
+                int yPositionDraw = 0;
+                if(p.X < 0)
+                {
+                    xPositionDraw += p.X;
+                }
+                if(p.Y < 0)
+                {
+                    yPositionDraw += p.Y;
+                }
+                Rectangle sourceRectangle = new Rectangle(0, 0, (int)(_bitmapView.Width), (int)(_bitmapView.Height));
+                g.DrawImage(_bitmapView, destRectangle2, sourceRectangle, GraphicsUnit.Pixel);
+                //g.DrawImage(_bitmapView, p);
             }
             positionView = p;
             return result;

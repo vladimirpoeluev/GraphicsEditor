@@ -537,7 +537,9 @@ namespace GraphicsEditor
 
         private void новыйToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AddNewCanvas addNewCanvas = new AddNewCanvas();
+            addNewCanvas.ShowDialog();
+            ImageFor = new ImageForDrawing(new OrdinaryCanvas(), new LineDraw(), addNewCanvas.SizeCanvas);
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)

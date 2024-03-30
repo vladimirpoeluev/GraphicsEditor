@@ -52,6 +52,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewCanvas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewCanvas.Designer.cs">
+      <DependentUpon>AddNewCanvas.cs</DependentUpon>
+    </Compile>
     <Compile Include="DrawingOptions.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -72,6 +78,9 @@
     <Compile Include="Interface\IСanvas.cs" />
     <Compile Include="Tools\RectangleDraw.cs" />
     <Compile Include="Tools\RegularBrush.cs" />
+    <EmbeddedResource Include="AddNewCanvas.resx">
+      <DependentUpon>AddNewCanvas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
