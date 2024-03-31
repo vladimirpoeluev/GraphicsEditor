@@ -71,6 +71,7 @@
     <Compile Include="Interface\IViewDrawingTool.cs" />
     <Compile Include="LangNames.cs" />
     <Compile Include="Layer.cs" />
+    <Compile Include="Tools\Filling.cs" />
     <Compile Include="Tools\LineDraw.cs" />
     <Compile Include="OrdinaryCanvas.cs" />
     <Compile Include="Program.cs" />

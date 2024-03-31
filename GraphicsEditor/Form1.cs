@@ -546,5 +546,10 @@ namespace GraphicsEditor
         {
             e.Graphics.DrawImage(memoryImage, 0, 0);
         }
+
+        private void заливкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ImageFor.SetTool(new Filling());
+        }
     }
 }
