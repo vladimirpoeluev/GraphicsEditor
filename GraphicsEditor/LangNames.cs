@@ -33,11 +33,13 @@ namespace GraphicsEditor
 
         public static string[] GetLanguages()
         {
-            return new string[]
+            string[] files = Directory.GetFiles("Langs", "*.lang");
+            string[] result = new string[files.Length];
+            for (int i = 0; i < files.Length; i++)
             {
-                "Ru_ru",
-                "En_en"
-            };
+                result[i] = files[i].Substring(6, files[i].Length - 11);
+            }
+            return result;
         }
 
         public static void SetLanguage(string name)

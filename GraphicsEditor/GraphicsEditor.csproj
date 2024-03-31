@@ -97,6 +97,9 @@
     <None Include="Langs\En_en.lang">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Langs\KOR_kor.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Langs\Ru_ru.lang">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -16,6 +16,16 @@ namespace GraphicsEditor
         public AddNewCanvas()
         {
             InitializeComponent();
+            UpdateTranslete();
+        }
+        void UpdateTranslete()
+        {
+            
+            label1.Text = LangNames.GetTranslete("lbl.width");
+            label2.Text = LangNames.GetTranslete("lbl.height");
+            Text = LangNames.GetTranslete("title.create");
+            button1.Text = LangNames.GetTranslete("btn.create");
+               
         }
 
         private void button1_Click(object sender, EventArgs e)

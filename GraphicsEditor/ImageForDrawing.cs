@@ -26,6 +26,7 @@ namespace GraphicsEditor
         Point positionView = new Point(0, 0);
         private ITool _tool;
         private Bitmap _bitmapView;
+
         public ImageForDrawing(ICanvas canvas, IViewDrawingTool tool, Size size) 
         { 
             SetTool(tool);
@@ -33,26 +34,24 @@ namespace GraphicsEditor
             CanvasD = canvas;
             _bitmapView = new Bitmap(CanvasD.GetBitmap());
         }
-
+        int xPositionDraw = 0;
+        int yPositionDraw = 0;
         public Bitmap GetView(Point p)
         {
             var result = new Bitmap(SizeWindow.Width, SizeWindow.Height);
             //_bitmapView = new Bitmap(CanvasD.ActiveLayer.DrawLayer);
             using (Graphics g = Graphics.FromImage(result)) {
                 g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.AssumeLinear;
+                xPositionDraw = 0;
+
+                yPositionDraw = 0;
                 Rectangle destRectangle2 = new Rectangle(p.X, p.Y, (int)(_bitmapView.Width), (int)(_bitmapView.Height));
 
-                int xPositionDraw = 0;
-                int yPositionDraw = 0;
-                if(p.X < 0)
-                {
-                    xPositionDraw += p.X;
-                }
-                if(p.Y < 0)
-                {
-                    yPositionDraw += p.Y;
-                }
-                Rectangle sourceRectangle = new Rectangle(0, 0, (int)(_bitmapView.Width), (int)(_bitmapView.Height));
+                
+                
+               
+                
+                Rectangle sourceRectangle = new Rectangle(xPositionDraw, yPositionDraw, (int)(_bitmapView.Width), (int)(_bitmapView.Height));
                 g.DrawImage(_bitmapView, destRectangle2, sourceRectangle, GraphicsUnit.Pixel);
                 //g.DrawImage(_bitmapView, p);
             }
@@ -65,8 +64,8 @@ namespace GraphicsEditor
         public void AddPoint(Point p, TypeClick type)
         {
             Point pointClick = p;
-            p.X = (int)((p.X - positionView.X) / Scale);
-            p.Y = (int)((p.Y - positionView.Y) / Scale);
+            p.X = (int)((p.X - positionView.X + xPositionDraw) / Scale);
+            p.Y = (int)((p.Y - positionView.Y + yPositionDraw) / Scale);
             _tool.Draw(CanvasD.ActiveLayer.DrawLayer, p, type);
             _bitmapView.Dispose();
             ViewPoint(pointClick);
@@ -85,7 +84,7 @@ namespace GraphicsEditor
                     {
                         if((i + j) % 2 != 0)
                         {
-                            g.FillRectangle(Brushes.Gray, i * 10, j * 10, 10, 10);
+                            g.FillRectangle(Brushes.LightGray, i * 10, j * 10, 10, 10);
                         }
                     }
                 }
@@ -97,8 +96,8 @@ namespace GraphicsEditor
         }
         public void ViewPoint(Point p)
         {
-            p.X = (int)((p.X - positionView.X) / Scale);
-            p.Y = (int)((p.Y - positionView.Y) / Scale);
+            p.X = (int)((p.X - positionView.X + xPositionDraw) / Scale);
+            p.Y = (int)((p.Y - positionView.Y + yPositionDraw) / Scale);
 
             _bitmapView.Dispose();
             Bitmap bm = CanvasD.GetBitmap();
