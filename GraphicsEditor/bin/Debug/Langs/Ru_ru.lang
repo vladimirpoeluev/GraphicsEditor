@@ -25,3 +25,7 @@ buttn.file=Файл
 buttn.view=Вид
 buttn.settings=Настройки
 buttn.tool=Инструменты
+lbl.width=Ширина
+lbl.height=Высота
+btn.create=Создать
+title.create=Окно создания

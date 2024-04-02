@@ -46,10 +46,6 @@ namespace GraphicsEditor
 
                 yPositionDraw = 0;
                 Rectangle destRectangle2 = new Rectangle(p.X, p.Y, (int)(_bitmapView.Width), (int)(_bitmapView.Height));
-
-                
-                
-               
                 
                 Rectangle sourceRectangle = new Rectangle(xPositionDraw, yPositionDraw, (int)(_bitmapView.Width), (int)(_bitmapView.Height));
                 g.DrawImage(_bitmapView, destRectangle2, sourceRectangle, GraphicsUnit.Pixel);

@@ -1,8 +1,6 @@
 C:\Users\Student\Desktop\GraphicsEditor\GraphicsEditor\bin\Debug\GraphicsEditor.exe.config
 C:\Users\Student\Desktop\GraphicsEditor\GraphicsEditor\bin\Debug\GraphicsEditor.exe
 C:\Users\Student\Desktop\GraphicsEditor\GraphicsEditor\bin\Debug\GraphicsEditor.pdb
-C:\Users\Student\Desktop\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.csproj.AssemblyReference.cache
-C:\Users\Student\Desktop\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.csproj.SuggestedBindingRedirects.cache
 C:\Users\Student\Desktop\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.Form1.resources
 C:\Users\Student\Desktop\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.Properties.Resources.resources
 C:\Users\Student\Desktop\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.csproj.GenerateResource.cache
@@ -54,3 +52,8 @@ C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\bin\Debug\Lang
 C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\bin\Debug\Langs\Ru_ru.lang
 C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\obj\Debug\GraphicsEditor.AddNewCanvas.resources
 C:\Users\User\OneDrive\Рабочий стол\GIT\GraphicsEditor\bin\Debug\Langs\KOR_kor.lang
+C:\Users\Student\Desktop\GraphicsEditor\GraphicsEditor\bin\Debug\Langs\En_en.lang
+C:\Users\Student\Desktop\GraphicsEditor\GraphicsEditor\bin\Debug\Langs\KOR_kor.lang
+C:\Users\Student\Desktop\GraphicsEditor\GraphicsEditor\bin\Debug\Langs\Ru_ru.lang
+C:\Users\Student\Desktop\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.csprojAssemblyReference.cache
+C:\Users\Student\Desktop\GraphicsEditor\GraphicsEditor\obj\Debug\GraphicsEditor.AddNewCanvas.resources

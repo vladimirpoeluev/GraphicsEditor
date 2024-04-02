@@ -337,11 +337,6 @@ namespace GraphicsEditor
         private void menuStrip1_MouseLeave(object sender, EventArgs e)
         {
 
-
-            
-
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -538,8 +533,10 @@ namespace GraphicsEditor
         private void новыйToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddNewCanvas addNewCanvas = new AddNewCanvas();
-            addNewCanvas.ShowDialog();
-            ImageFor = new ImageForDrawing(new OrdinaryCanvas(), new LineDraw(), addNewCanvas.SizeCanvas);
+            if(addNewCanvas.ShowDialog() == DialogResult.OK)
+            ImageFor = new ImageForDrawing(new OrdinaryCanvas(addNewCanvas.SizeCanvas), new LineDraw(), addNewCanvas.SizeCanvas);
+            if (ImageFor != null)
+                ImageFor.SizeWindow = pictureBox1.Size;
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)

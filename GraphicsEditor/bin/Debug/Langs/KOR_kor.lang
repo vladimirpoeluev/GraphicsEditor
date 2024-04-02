@@ -25,3 +25,7 @@ buttn.file=파일
 buttn.view=보다
 buttn.settings=설정
 buttn.tool=도구
+lbl.width=폭
+lbl.height=높이
+btn.create=만들기
+title.create=생성 창

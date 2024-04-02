@@ -56,25 +56,28 @@ namespace GraphicsEditor
         }
         private void DrawFilling(Bitmap bitmap, Point p1)
         {
-            
-            lock (bitmap)
-            {
-                FloodFill(bitmap, p1.X, p1.Y, DrawingOptions.Color);
-
-            }
-
+                lock (bitmap)
+                {
+                    FloodFill(bitmap, p1.X, p1.Y, DrawingOptions.Color);
+                }
         }
         public void Draw(Bitmap bmp, Point p, TypeClick type)
         {
-
-
-            if (type == TypeClick.UpLeft)
+            try
             {
-                _color = bmp.GetPixel(p.X, p.Y);
-                DrawFilling(bmp, p);
+
+
+                if (type == TypeClick.UpLeft)
+                {
+                    _color = bmp.GetPixel(p.X, p.Y);
+                    DrawFilling(bmp, p);
+                }
+
             }
+            catch (Exception)
+            {
 
-
+            }
 
         }
 

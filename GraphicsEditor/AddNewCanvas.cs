@@ -31,6 +31,7 @@ namespace GraphicsEditor
         private void button1_Click(object sender, EventArgs e)
         {
             SizeCanvas = new Size((int)numericUpDown1.Value, (int)numericUpDown2.Value);
+            DialogResult = DialogResult.OK;
             this.Close();
         }
     }
